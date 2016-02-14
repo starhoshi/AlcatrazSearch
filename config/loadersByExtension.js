@@ -6,7 +6,6 @@ function extsToRegExp(exts) {
 
 module.exports = function loadersByExtension(obj) {
 	var loaders = [];
-	console.log("obj",obj);
 	Object.keys(obj).forEach(function(key) {
 		var exts = key.split("|");
 		var value = obj[key];
