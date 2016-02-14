@@ -6,7 +6,7 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "assertion-error/assertion-error.d.ts": {
-      "commit": "ba257a9b91bc0de1bdd9091b6723194c905a902a"
+      "commit": "bcd5761826eb567876c197ccc6a87c4d05731054"
     },
     "mocha/mocha.d.ts": {
       "commit": "ba257a9b91bc0de1bdd9091b6723194c905a902a"
@@ -24,10 +24,16 @@
       "commit": "ba257a9b91bc0de1bdd9091b6723194c905a902a"
     },
     "react/react.d.ts": {
-      "commit": "ba257a9b91bc0de1bdd9091b6723194c905a902a"
+      "commit": "bcd5761826eb567876c197ccc6a87c4d05731054"
     },
     "redux-actions/redux-actions.d.ts": {
       "commit": "ba257a9b91bc0de1bdd9091b6723194c905a902a"
+    },
+    "chai/chai.d.ts": {
+      "commit": "bcd5761826eb567876c197ccc6a87c4d05731054"
+    },
+    "react/react-dom.d.ts": {
+      "commit": "bcd5761826eb567876c197ccc6a87c4d05731054"
     }
   }
 }
