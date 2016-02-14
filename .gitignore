@@ -1,0 +1,10 @@
+.vscode/
+.idea/
+node_modules/
+npm-debug.log
+build/stats-dev.json*
+build/public
+tmp/
+dist/
+.sw[a-z]
+typings/
