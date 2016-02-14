@@ -5,7 +5,7 @@ var StatsPlugin = require("stats-webpack-plugin");
 var loadersByExtension = require("../config/loadersByExtension");
 var HtmlwebpackPlugin = require('html-webpack-plugin');
 
-module.exports = function(options) {
+module.exports = function (options) {
   var entry;
 
   if (options.development) {
@@ -40,7 +40,7 @@ module.exports = function(options) {
   };
 
   var publicPath = options.development
-      ? "http://localhost:2992/" : "";
+    ? "http://localhost:2992/" : "";
 
   var plugins = [
     new webpack.PrefetchPlugin("react"),
@@ -49,21 +49,21 @@ module.exports = function(options) {
       chunkModules: true
     }),
     new HtmlwebpackPlugin({
-      template:"client/index.html"
+      template: "client/index.html"
     })
   ];
 
-  Object.keys(stylesheetLoaders).forEach(function(ext) {
+  Object.keys(stylesheetLoaders).forEach(function (ext) {
     var stylesheetLoader = stylesheetLoaders[ext];
-    if(Array.isArray(stylesheetLoader)) stylesheetLoader = stylesheetLoader.join("!");
-    if(options.separateStylesheet) {
+    if (Array.isArray(stylesheetLoader)) stylesheetLoader = stylesheetLoader.join("!");
+    if (options.separateStylesheet) {
       stylesheetLoaders[ext] = ExtractTextPlugin.extract("style-loader", stylesheetLoader);
     } else {
       stylesheetLoaders[ext] = "style-loader!" + stylesheetLoader;
     }
   });
 
-  if(options.separateStylesheet) {
+  if (options.separateStylesheet) {
     plugins = plugins.concat([
       new ExtractTextPlugin("[name].css", {
         allChunks: true
@@ -71,7 +71,7 @@ module.exports = function(options) {
     ]);
   }
 
-  if(options.minimize) {
+  if (options.minimize) {
     plugins = plugins.concat([
       new webpack.optimize.UglifyJsPlugin({
         compressor: {
@@ -82,7 +82,7 @@ module.exports = function(options) {
     ]);
   }
 
-  if(options.minimize) {
+  if (options.minimize) {
     plugins = plugins.concat([
       new webpack.DefinePlugin({
         "process.env": {

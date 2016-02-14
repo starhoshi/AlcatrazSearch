@@ -4,7 +4,7 @@ var http = require('http');
 var serveStatic = require('serve-static');
 var config = require('./config');
 
-module.exports = function(options) {
+module.exports = function (options) {
 
   // load bundle information from stats
   var stats = options.devServer ? require("../build/stats-dev.json") : require("../build/stats.json");
@@ -15,8 +15,7 @@ module.exports = function(options) {
   app.use("/_assets", express.static(path.join(__dirname, "..", "build", "public"), {
     maxAge: "200d" // We can cache them as they include hashes
   }));
-  app.use("/", express.static(path.join(__dirname, "..", "public"), {
-  }));
+  app.use("/", express.static(path.join(__dirname, "..", "public"), {}));
 
   app.use(serveStatic(config.publicPath, {'index': ['index.html']}));
 
