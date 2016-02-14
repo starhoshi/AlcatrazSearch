@@ -1,4 +1,5 @@
-import { assign } from 'lodash';
+import _ = require('lodash');
+
 import { handleActions, Action } from 'redux-actions';
 
 import { Todo } from '../models/todos';
@@ -18,7 +19,7 @@ const initialState = [<Todo>{
 }];
 
 export default handleActions<Todo[]>({
-  [ADD_TODO]: (state: Todo[], action: Action): Todo[] => {
+  [ADD_TODO]: (state:Todo[], action:Action):Todo[] => {
     return [{
       id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
       completed: action.payload.completed,
@@ -26,36 +27,36 @@ export default handleActions<Todo[]>({
     }, ...state];
   },
 
-  [DELETE_TODO]: (state: Todo[], action: Action): Todo[] => {
+  [DELETE_TODO]: (state:Todo[], action:Action):Todo[] => {
     return state.filter(todo =>
       todo.id !== action.payload.id
     );
   },
 
-  [EDIT_TODO]: (state: Todo[], action: Action): Todo[] => {
+  [EDIT_TODO]: (state:Todo[], action:Action):Todo[] => {
     return <Todo[]>state.map(todo =>
       todo.id === action.payload.id
-        ? assign(<Todo>{}, todo, { text: action.payload.text })
+        ? _.assign(<Todo>{}, todo, {text: action.payload.text})
         : todo
     );
   },
 
-  [COMPLETE_TODO]: (state: Todo[], action: Action): Todo[] => {
+  [COMPLETE_TODO]: (state:Todo[], action:Action):Todo[] => {
     return <Todo[]>state.map(todo =>
       todo.id === action.payload.id ?
-        assign({}, todo, { completed: !todo.completed }) :
+        _.assign({}, todo, {completed: !todo.completed}) :
         todo
     );
   },
 
-  [COMPLETE_ALL]: (state: Todo[], action: Action): Todo[] => {
+  [COMPLETE_ALL]: (state:Todo[], action:Action):Todo[] => {
     const areAllMarked = state.every(todo => todo.completed);
-    return <Todo[]>state.map(todo => assign({}, todo, {
+    return <Todo[]>state.map(todo => _.assign({}, todo, {
       completed: !areAllMarked
     }));
   },
 
-  [CLEAR_COMPLETED]: (state: Todo[], action: Action): Todo[] => {
+  [CLEAR_COMPLETED]: (state:Todo[], action:Action):Todo[] => {
     return state.filter(todo => todo.completed === false);
   }
 }, initialState);

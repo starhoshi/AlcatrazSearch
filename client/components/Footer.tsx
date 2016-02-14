@@ -29,7 +29,8 @@ class Footer extends React.Component<FooterProps, any> {
 
     return (
       <span className="todo-count">
-        <strong>{activeCount || 'No'}</strong> {itemWord} left
+        <strong>{activeCount || 'No'}</strong>
+        {itemWord} left
       </span>
     );
   }
@@ -52,7 +53,7 @@ class Footer extends React.Component<FooterProps, any> {
     if (completedCount > 0) {
       return (
         <button className="clear-completed"
-                onClick={() => onClearCompleted()} >
+                onClick={() => onClearCompleted()}>
           Clear completed
         </button>
       );
@@ -65,10 +66,10 @@ class Footer extends React.Component<FooterProps, any> {
         {this.renderTodoCount()}
         <ul className="filters">
           {[SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED].map(filter =>
-            <li key={filter}>
-              {this.renderFilterLink(filter)}
-            </li>
-          )}
+          <li key={filter}>
+            {this.renderFilterLink(filter)}
+          </li>
+            )}
         </ul>
         {this.renderClearButton()}
       </footer>

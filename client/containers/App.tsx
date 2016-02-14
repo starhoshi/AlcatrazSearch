@@ -15,7 +15,7 @@ class App extends React.Component<any, any> {
 
     return (
       <div className="todoapp">
-        <Header addTodo={actions.addTodo} />
+        <Header addTodo={actions.addTodo}/>
         <MainSection
           todos={todos}
           actions={actions}/>

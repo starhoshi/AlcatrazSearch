@@ -18,12 +18,12 @@ const TODO_FILTERS = {
 interface MainSectionProps {
   todos: Todo[];
   actions: any;
-};
+}
 
 class MainSection extends React.Component<MainSectionProps, any> {
   constructor(props, context) {
     super(props, context);
-    this.state = { filter: SHOW_ALL };
+    this.state = {filter: SHOW_ALL};
   }
 
   handleClearCompleted() {
@@ -34,7 +34,7 @@ class MainSection extends React.Component<MainSectionProps, any> {
   }
 
   handleShow(filter) {
-    this.setState({ filter });
+    this.setState({filter});
   }
 
   renderToggleAll(completedCount) {
@@ -44,7 +44,7 @@ class MainSection extends React.Component<MainSectionProps, any> {
         <input className="toggle-all"
                type="checkbox"
                checked={completedCount === todos.length}
-               onChange={() => actions.completeAll()} />
+               onChange={() => actions.completeAll()}/>
       );
     }
   }
@@ -60,7 +60,7 @@ class MainSection extends React.Component<MainSectionProps, any> {
                 activeCount={activeCount}
                 filter={filter}
                 onClearCompleted={this.handleClearCompleted.bind(this)}
-                onShow={this.handleShow.bind(this)} />
+                onShow={this.handleShow.bind(this)}/>
       );
     }
   }
@@ -70,8 +70,8 @@ class MainSection extends React.Component<MainSectionProps, any> {
     const { filter } = this.state;
 
     const filteredTodos = todos.filter(TODO_FILTERS[filter]);
-    const completedCount = todos.reduce((count: number, todo): number =>
-      todo.completed ? count + 1 : count,
+    const completedCount = todos.reduce((count:number, todo):number =>
+        todo.completed ? count + 1 : count,
       0
     );
 
@@ -80,11 +80,11 @@ class MainSection extends React.Component<MainSectionProps, any> {
         {this.renderToggleAll(completedCount)}
         <ul className="todo-list">
           {filteredTodos.map(todo =>
-            <TodoItem
-              key={todo.id}
-              todo={todo}
-              { ...actions }/>
-          )}
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            { ...actions }/>
+            )}
         </ul>
         {this.renderFooter(completedCount)}
       </section>

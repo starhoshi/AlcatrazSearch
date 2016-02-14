@@ -2,6 +2,9 @@
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { Action } from 'redux-actions';
+import App from './containers/App';
+import { rootReducer } from './reducers/rootReducer';
 
 import {
   Store,
@@ -10,18 +13,15 @@ import {
   bindActionCreators,
   combineReducers
 } from 'redux';
+
 import {
   connect,
   Provider
 } from 'react-redux';
-import { Action } from 'redux-actions';
-
-import App from './containers/App';
-import { rootReducer } from './reducers/rootReducer';
 
 const initialState = {};
 
-const store: Store = createStore(rootReducer, initialState);
+const store:Store = createStore(rootReducer, initialState);
 
 ReactDOM.render(
   <Provider store={store}>

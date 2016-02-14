@@ -25,7 +25,7 @@ describe('TodoActions', () => {
       text: 'hi',
       completed: false
     }, 'bye');
-    chai.expect(todo).to.eql({ id: 999, text: 'bye', completed: false});
+    chai.expect(todo).to.eql({id: 999, text: 'bye', completed: false});
   });
 
   it('completes todo', () => {

@@ -21,7 +21,7 @@ class TodoItem extends React.Component<TodoItemProps, any> {
   }
 
   handleDoubleClick() {
-    this.setState({ editing: true });
+    this.setState({editing: true});
   }
 
   handleSave(todo, text) {
@@ -30,7 +30,7 @@ class TodoItem extends React.Component<TodoItemProps, any> {
     } else {
       this.props.editTodo(todo, text);
     }
-    this.setState({ editing: false });
+    this.setState({editing: false});
   }
 
   render() {
@@ -49,12 +49,12 @@ class TodoItem extends React.Component<TodoItemProps, any> {
           <input className="toggle"
                  type="checkbox"
                  checked={todo.completed}
-                 onChange={() => completeTodo(todo)} />
+                 onChange={() => completeTodo(todo)}/>
           <label onDoubleClick={this.handleDoubleClick.bind(this)}>
             {todo.text}
           </label>
           <button className="destroy"
-                  onClick={() => deleteTodo(todo)} />
+                  onClick={() => deleteTodo(todo)}/>
         </div>
       );
     }
