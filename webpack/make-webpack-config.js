@@ -106,9 +106,6 @@ module.exports = function(options) {
     })]);
   }
 
-  console.log("entry",entry );
-  console.log("__dirname",__dirname );
-  console.log("[id].js");
   return {
     entry: entry,
     output: {

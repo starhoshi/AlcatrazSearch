@@ -18,6 +18,7 @@ Install dependencies:
 
 ```
 npm install
+typings install
 ```
 
 ## Running development server
