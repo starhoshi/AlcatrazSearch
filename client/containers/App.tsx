@@ -4,6 +4,7 @@ import * as React from 'react';
 
 import Header from '../components/Header';
 import MainSection from '../components/MainSection';
+import PageFooter from '../components/PageFooter';
 import * as TodoActions from '../actions/todos';
 
 // It would be nice to specify an AppProps interface for this component, but it
@@ -19,6 +20,7 @@ class App extends React.Component<any, any> {
         <MainSection
           todos={todos}
           actions={actions}/>
+        <PageFooter/>
       </div>
     );
   }
