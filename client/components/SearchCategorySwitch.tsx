@@ -9,9 +9,9 @@ class SearchCategorySwitch extends React.Component<SearchCategorySwitchProps, an
   render() {
     return (
       <ButtonGroup>
-        <Button active>Plugins</Button>
-        <Button>Themes</Button>
-        <Button>Templates</Button>
+        <Button bsStyle="primary" active>Plugins</Button>
+        <Button bsStyle="primary">Themes</Button>
+        <Button bsStyle="primary">Templates</Button>
       </ButtonGroup>
     );
   }
