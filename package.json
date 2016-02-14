@@ -16,6 +16,7 @@
   "author": "start__hoshi <kensuke1751@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "3.3.6",
     "classnames": "2.2.3",
     "express": "4.13.3",
     "extract-text-webpack-plugin": "0.9.1",

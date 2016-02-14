@@ -29,6 +29,9 @@ module.exports = function(options) {
     },
     "ts|tsx": {
       loaders: ['react-hot', 'ts-loader']
+    },
+    "png|woff|woff2|eot|ttf|svg": {
+      loader: 'url-loader'
     }
   };
 

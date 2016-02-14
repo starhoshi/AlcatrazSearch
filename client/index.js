@@ -1,2 +1,2 @@
-import 'todomvc-app-css/index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './main';

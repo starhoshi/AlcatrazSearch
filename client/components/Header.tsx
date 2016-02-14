@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import TodoTextInput from './TodoTextInput';
+import {PageHeader} from 'react-bootstrap';
 
 interface HeaderProps {
   addTodo: Function;
@@ -15,13 +16,12 @@ class Header extends React.Component<HeaderProps, any> {
 
   render() {
     return (
-      <header className="header">
-        <h1>Alcatraz Search</h1>
+      <PageHeader>
         <TodoTextInput
           newTodo
           onSave={this.handleSave.bind(this)}
           placeholder="Input Xcode Package Name."/>
-      </header>
+      </PageHeader>
     );
   }
 }
