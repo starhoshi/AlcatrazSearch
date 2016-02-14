@@ -2,12 +2,6 @@
 
 Search [Alcatraz](http://alcatraz.io/) better.
 
-
-## Reference
-
-* [jaysoo/todomvc-redux-react-typescript: TodoMVC example using Redux, React, and Typescript](https://github.com/jaysoo/todomvc-redux-react-typescript)
-
-
 ## Getting Started
 
 Requirement:
@@ -47,3 +41,10 @@ To run tests, use:
 ```
 npm test
 ```
+
+## Reference
+
+* Great Xcode Plugin Manager.
+    *  [Alcatraz | The Package manager for Xcode](http://alcatraz.io/)
+* webpack, TypeScript, react, redux, etc...
+    * [jaysoo/todomvc-redux-react-typescript: TodoMVC example using Redux, React, and Typescript](https://github.com/jaysoo/todomvc-redux-react-typescript)
