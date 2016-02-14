@@ -29,6 +29,8 @@ Run webpack dev server (for assets):
 npm run dev-server
 ```
 
+Visit [http://localhost:2992](http://localhost:2992)
+
 ## build for production
 
 Output build/public:
