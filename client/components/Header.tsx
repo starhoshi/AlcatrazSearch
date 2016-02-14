@@ -4,7 +4,7 @@ import TodoTextInput from './TodoTextInput';
 
 interface HeaderProps {
   addTodo: Function;
-};
+}
 
 class Header extends React.Component<HeaderProps, any> {
   handleSave(text) {
@@ -16,11 +16,11 @@ class Header extends React.Component<HeaderProps, any> {
   render() {
     return (
       <header className="header">
-          <h1>todos</h1>
-          <TodoTextInput
-            newTodo
-            onSave={this.handleSave.bind(this)}
-            placeholder="What needs to be done?" />
+        <h1>Alcatraz Search</h1>
+        <TodoTextInput
+          newTodo
+          onSave={this.handleSave.bind(this)}
+          placeholder="Input Xcode Package Name."/>
       </header>
     );
   }
