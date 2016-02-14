@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import TodoTextInput from './TodoTextInput';
 import {Jumbotron} from 'react-bootstrap';
+import SearchCategorySwitch from './SearchCategorySwitch';
 
 interface HeaderProps {
   addTodo: Function;
@@ -23,6 +24,7 @@ class Header extends React.Component<HeaderProps, any> {
           newTodo
           onSave={this.handleSave.bind(this)}
           placeholder="Input Xcode Package Name."/>
+        <SearchCategorySwitch/>
       </Jumbotron>
     );
   }
