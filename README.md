@@ -1,7 +1,7 @@
 # AlcatrazSearch
 
-Search Alcatraz better.
+Search [Alcatraz](http://alcatraz.io/) better.
 
 ## Reference
 
-* [Alcatraz | The Package manager for Xcode](http://alcatraz.io/)
+* [jaysoo/todomvc-redux-react-typescript: TodoMVC example using Redux, React, and Typescript](https://github.com/jaysoo/todomvc-redux-react-typescript)
