@@ -1,4 +1,4 @@
-import { expect } from 'chai';
+import chai = require('chai');
 
 import { Todo } from '../../models/todos';
 import todos from '../todos';
@@ -21,7 +21,7 @@ describe('todo reducer', () => {
       payload: { text: 'hello', completed: false }
     });
 
-    expect(state[0]).to.eql(
+    chai.expect(state[0]).to.eql(
       { id: 1, text: 'hello', completed: false }
     );
   });
@@ -34,7 +34,7 @@ describe('todo reducer', () => {
       payload: { id: 1 }
     });
 
-    expect(state).to.eql([]);
+    chai.expect(state).to.eql([]);
   });
 
   it('handles edit', () => {
@@ -45,7 +45,7 @@ describe('todo reducer', () => {
       payload: { id: 1, text: 'hello' }
     });
 
-    expect(state[0]).to.eql(
+    chai.expect(state[0]).to.eql(
       { id: 1, text: 'hello', completed: false }
     );
   });
@@ -61,7 +61,7 @@ describe('todo reducer', () => {
       payload: { id: 1 }
     });
 
-    expect(state[0]).to.eql(
+    chai.expect(state[0]).to.eql(
       { id: 1, text: '', completed: true }
     );
   });
@@ -78,7 +78,7 @@ describe('todo reducer', () => {
       payload: {}
     });
 
-    expect(state).to.eql([
+    chai.expect(state).to.eql([
       { id: 1, text: '', completed: true },
       { id: 2, text: '', completed: true },
       { id: 3, text: '', completed: true }
@@ -89,7 +89,7 @@ describe('todo reducer', () => {
       payload: {}
     });
 
-    expect(state).to.eql([
+    chai.expect(state).to.eql([
       { id: 1, text: '', completed: false },
       { id: 2, text: '', completed: false },
       { id: 3, text: '', completed: false }
@@ -107,7 +107,7 @@ describe('todo reducer', () => {
       payload: {}
     });
 
-    expect(state).to.eql([
+    chai.expect(state).to.eql([
       { id: 1, text: '', completed: false }
     ]);
   });

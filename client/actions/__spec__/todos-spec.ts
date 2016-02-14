@@ -1,4 +1,4 @@
-import { expect } from 'chai';
+import chai = require('chai');
 
 import * as TodoActions from '../todos';
 
@@ -6,7 +6,7 @@ describe('TodoActions', () => {
   it('creates new todo', () => {
     const { payload: todo } = TodoActions.addTodo('hello');
 
-    expect(todo.text).to.eql('hello');
+    chai.expect(todo.text).to.eql('hello');
   });
 
   it('deletes todo', () => {
@@ -16,7 +16,7 @@ describe('TodoActions', () => {
       completed: false
     });
 
-    expect(todo.id).to.eql(999);
+    chai.expect(todo.id).to.eql(999);
   });
 
   it('edits todo', () => {
@@ -25,7 +25,7 @@ describe('TodoActions', () => {
       text: 'hi',
       completed: false
     }, 'bye');
-    expect(todo).to.eql({ id: 999, text: 'bye', completed: false});
+    chai.expect(todo).to.eql({ id: 999, text: 'bye', completed: false});
   });
 
   it('completes todo', () => {
@@ -35,6 +35,6 @@ describe('TodoActions', () => {
       completed: false
     });
 
-    expect(todo.id).to.eql(999);
+    chai.expect(todo.id).to.eql(999);
   });
 });
