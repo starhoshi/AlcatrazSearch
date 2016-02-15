@@ -17,8 +17,9 @@ class MainResult extends React.Component<MainResultProps, any> {
     const { alcatraz } = this.props;
     return (
       <div>
-        {alcatraz.map( al=>
-        <Panel key={al.name} header={al.name}>
+        {alcatraz.map((al,i)=>
+        <Panel key={i} header={al.name}>
+          <p>{i + 1}</p>
           <p>{al.description}</p>
           <p>{al.stargazers_count}</p>
           <a href={al.url}>{al.name}</a>
