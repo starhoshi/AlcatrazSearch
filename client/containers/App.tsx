@@ -18,8 +18,8 @@ class App extends React.Component<any, any> {
     const actions = bindActionCreators(TodoActions, dispatch);
 
     return (
-      <div className="todoapp">
-        <Header addTodo={actions.addTodo}/>
+      <div className="alcatrazapp">
+        <Header/>
         <SortButtonToolbar/>
         <MainResult alcatraz={alcatraz}/>
         <PageFooter/>
