@@ -10,7 +10,7 @@ class SortButtonToolbar extends React.Component<SortButtonToolbarProps, any> {
   render() {
     return (
       <div>
-        <span>ORDER BY: </span>
+        <span>ORDER BY:</span>
         <Nav bsStyle="pills" activeKey={1}>
           <NavItem eventKey={1}>
             <Icon name="star"/>
@@ -27,6 +27,10 @@ class SortButtonToolbar extends React.Component<SortButtonToolbarProps, any> {
           <NavItem eventKey={4}>
             <Icon name="code-fork"/>
             Forks
+          </NavItem>
+          <NavItem eventKey={5}>
+            <Icon name="sort-alpha-asc"/>
+            Name
           </NavItem>
         </Nav>
       </div>
