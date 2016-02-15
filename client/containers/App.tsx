@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 import * as React from 'react';
 
 import Header from '../components/Header';
-import MainSection from '../components/MainSection';
+//import MainSection from '../components/MainSection';
+import SortButtonToolbar from '../components/SortButtonToolbar';
+import MainResult from '../components/MainResult';
 import PageFooter from '../components/PageFooter';
 import * as TodoActions from '../actions/todos';
 
@@ -17,9 +19,8 @@ class App extends React.Component<any, any> {
     return (
       <div className="todoapp">
         <Header addTodo={actions.addTodo}/>
-        <MainSection
-          todos={todos}
-          actions={actions}/>
+        <SortButtonToolbar/>
+        <MainResult/>
         <PageFooter/>
       </div>
     );
