@@ -20,6 +20,9 @@ class MainResult extends React.Component<MainResultProps, any> {
         {alcatraz.map( al=>
         <Panel key={al.name} header={al.name}>
           <p>{al.description}</p>
+          <p>{al.stargazers_count}</p>
+          <a href={al.url}>{al.name}</a>
+          <img src={al.screenshot}/>
         </Panel>
           )}
       </div>
