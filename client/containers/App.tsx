@@ -14,13 +14,14 @@ import * as TodoActions from '../actions/todos';
 class App extends React.Component<any, any> {
   render() {
     const { todos, dispatch } = this.props;
+    const { alcatraz } = this.props;
     const actions = bindActionCreators(TodoActions, dispatch);
 
     return (
       <div className="todoapp">
         <Header addTodo={actions.addTodo}/>
         <SortButtonToolbar/>
-        <MainResult/>
+        <MainResult alcatraz={alcatraz}/>
         <PageFooter/>
       </div>
     );
@@ -28,7 +29,9 @@ class App extends React.Component<any, any> {
 }
 
 const mapStateToProps = state => ({
-  todos: state.todos
+  todos: state.todos,
+  alcatraz: state.alcatraz
 });
+console.log(mapStateToProps);
 
 export default connect(mapStateToProps)(App);
