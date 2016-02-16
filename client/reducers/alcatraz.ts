@@ -14,7 +14,8 @@ const initialState = [
     stargazers_count: 100,
     forks_count: 100,
     watchers_count: 100,
-    contributors_count: 100
+    contributors_count: 100,
+    package_type:"PLUGIN"
   },
   <Alcatraz>{
     name: "aaa",
@@ -25,7 +26,8 @@ const initialState = [
     stargazers_count: 100,
     forks_count: 100,
     watchers_count: 100,
-    contributors_count: 100
+    contributors_count: 100,
+    package_type:"THEME"
   }
 ];
 

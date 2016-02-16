@@ -1,3 +1,3 @@
-export const PLUGINS = 'PLUGINS';
-export const THEMES = 'THEMES';
-export const TEMPLATES = 'TEMPLATES';
+export const SHOW_PLUGINS = 'PLUGINS';
+export const SHOW_THEMES = 'THEMES';
+export const SHOW_TEMPLATES = 'TEMPLATES';

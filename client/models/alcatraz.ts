@@ -8,4 +8,5 @@ export type Alcatraz = {
   forks_count: number;
   watchers_count: number;
   contributors_count: number;
+  package_type: string;
 };

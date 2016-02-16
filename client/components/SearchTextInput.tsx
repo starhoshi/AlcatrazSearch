@@ -16,7 +16,6 @@ class SearchTextInput extends React.Component<SearchTextInputProps, any> {
 
   handleChange(e) {
     this.setState({text: e.target.value});
-    console.log(e.target.value);
   }
 
   render() {
