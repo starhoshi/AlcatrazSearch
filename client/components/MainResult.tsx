@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as classNames from 'classnames';
 import {Panel} from 'react-bootstrap';
 import {Alcatraz} from "../models/alcatraz";
-import {STARS} from "../constants/SortTypes";
+import {STARS} from "../constants/OrderByTypes";
 
 interface MainResultProps {
   alcatraz: Alcatraz[];
