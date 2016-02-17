@@ -2,18 +2,20 @@ import * as React from 'react';
 import * as classNames from 'classnames';
 import {Nav,NavItem} from 'react-bootstrap';
 import * as Icon from 'react-fa';
-import {STARS,LAST_COMMIT,WATCHES,FORKS,NAME} from "../constants/OrderByTypes";
+import {STARS,UPDATED,CREATED,WATCHES,FORKS,NAME} from "../constants/OrderByTypes";
 
 const ORDER_BY_TITLES = {
   [STARS]: 'Stars',
-  [LAST_COMMIT]: 'Last Commit',
+  [UPDATED]: 'Updated',
+  [CREATED]: 'Created',
   [WATCHES]: 'Watches',
   [FORKS]: 'Forks',
   [NAME]: 'Name',
 };
 const ORDER_BY_ICONS = {
   [STARS]: 'star',
-  [LAST_COMMIT]: 'clock-o',
+  [UPDATED]: 'clock-o',
+  [CREATED]: 'calendar',
   [WATCHES]: 'eye',
   [FORKS]: 'code-fork',
   [NAME]: 'sort-alpha-asc',
@@ -33,7 +35,7 @@ class SortButtonToolbar extends React.Component<SortButtonToolbarProps, any> {
   }
 
   renderOrderByNavItems() {
-    return [STARS, LAST_COMMIT, WATCHES, FORKS, NAME].map(orderBy => {
+    return [STARS, UPDATED, CREATED, WATCHES, FORKS, NAME].map(orderBy => {
       const title = ORDER_BY_TITLES[orderBy];
       const icon = ORDER_BY_ICONS[orderBy];
       return (

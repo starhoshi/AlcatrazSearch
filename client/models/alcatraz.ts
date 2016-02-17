@@ -9,4 +9,7 @@ export type Alcatraz = {
   watchers_count: number;
   contributors_count: number;
   package_type: string;
+  updated_at: string;
+  created_at: string;
+  pushed_at: string;
 };
