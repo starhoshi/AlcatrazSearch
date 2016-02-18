@@ -15,7 +15,7 @@ interface SearchCategorySwitchProps {
   onShow: Function;
 }
 
-class SearchCategorySwitch extends React.Component<SearchCategorySwitchProps, any> {
+class SearchCategorySwitch extends React.Component<SearchCategorySwitchProps, void> {
   renderFilterButtons() {
     return [SHOW_PLUGINS, SHOW_THEMES, SHOW_TEMPLATES].map(filter => {
       const title = FILTER_TITLES[filter];

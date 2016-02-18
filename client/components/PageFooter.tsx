@@ -1,6 +1,9 @@
 import * as React from 'react';
 
-class PageFooter extends React.Component<any, any> {
+interface PageFooterProps {
+}
+
+class PageFooter extends React.Component<PageFooterProps, void> {
   render() {
     return (
       <footer>

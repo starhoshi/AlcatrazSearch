@@ -8,7 +8,7 @@ interface MainResultProps {
   alcatraz: Alcatraz[];
 }
 
-class MainResult extends React.Component<MainResultProps, any> {
+class MainResult extends React.Component<MainResultProps, void> {
   constructor(props, context) {
     super(props, context);
   }

@@ -16,7 +16,11 @@ const CATEGORY_FILTERS = {
 interface HeaderProps {
 }
 
-class Header extends React.Component<HeaderProps, any> {
+interface HeaderState {
+  filter: string;
+}
+
+class Header extends React.Component<HeaderProps, HeaderState> {
   constructor(props, context) {
     super(props, context);
     this.state = {filter: SHOW_PLUGINS};

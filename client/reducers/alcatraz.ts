@@ -9,7 +9,7 @@ const initialState = [
     name: "HKSnippet",
     url: "https://github.com/hunk3000/HKSnippet",
     description: "HKSnippet is a xcode plug-in for typing code snippet with triggers strings. It can minimize input for often used code snippet.",
-    screenshot: "https://raw.githubusercontent.com/hunk3000/HKSnippet/master/Images/demo.gif",
+    screenshot: "https://raw.githubusercontent.com/hunk3000/HKSnippet/master/Images/demo1.gif",
     open_issues_count: 100,
     stargazers_count: 100,
     forks_count: 100,

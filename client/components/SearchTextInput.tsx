@@ -6,7 +6,11 @@ interface SearchTextInputProps {
   placeholder?: string;
 }
 
-class SearchTextInput extends React.Component<SearchTextInputProps, any> {
+interface SearchTextInputState {
+  text: string;
+}
+
+class SearchTextInput extends React.Component<SearchTextInputProps, SearchTextInputState> {
   constructor(props, context) {
     super(props, context);
     this.state = {

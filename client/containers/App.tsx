@@ -1,21 +1,24 @@
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import * as React from 'react';
 
 import Header from '../components/Header';
-//import MainSection from '../components/MainSection';
 import SortButtonToolbar from '../components/SortButtonToolbar';
 import MainResult from '../components/MainResult';
 import PageFooter from '../components/PageFooter';
 import * as TodoActions from '../actions/todos';
+import {Alcatraz} from '../models/alcatraz';
 
-// It would be nice to specify an AppProps interface for this component, but it
-// does not play nicely with the {() => <App/>} usage in main.
-class App extends React.Component<any, any> {
+interface AppProps {
+  alcatraz: Alcatraz[];
+  dispatch: Dispatch;
+}
+
+class App extends React.Component<any, void> {
   render() {
-    const { todos, dispatch } = this.props;
-    const { alcatraz } = this.props;
+    const { alcatraz,dispatch } = this.props;
     const actions = bindActionCreators(TodoActions, dispatch);
+    console.log(alcatraz);
 
     return (
       <div className="alcatrazapp">
@@ -29,7 +32,6 @@ class App extends React.Component<any, any> {
 }
 
 const mapStateToProps = state => ({
-  todos: state.todos,
   alcatraz: state.alcatraz
 });
 console.log(mapStateToProps);
