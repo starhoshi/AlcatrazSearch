@@ -44,7 +44,7 @@ npm test
 
 ## Reference
 
-* Great Xcode Plugin Manager.
-    *  [Alcatraz | The Package manager for Xcode](http://alcatraz.io/)
-* webpack, TypeScript, react, redux, etc...
-    * [jaysoo/todomvc-redux-react-typescript: TodoMVC example using Redux, React, and Typescript](https://github.com/jaysoo/todomvc-redux-react-typescript)
+*  [Alcatraz | The Package manager for Xcode](http://alcatraz.io/)
+    * Great Xcode Plugin Manager.
+* [jaysoo/todomvc-redux-react-typescript: TodoMVC example using Redux, React, and Typescript](https://github.com/jaysoo/todomvc-redux-react-typescript)
+    * webpack, TypeScript, react, redux, etc...
