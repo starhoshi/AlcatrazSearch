@@ -10,15 +10,14 @@ import * as TodoActions from '../actions/todos';
 import {Alcatraz} from '../models/alcatraz';
 
 interface AppProps {
-  alcatraz: Alcatraz[];
-  dispatch: Dispatch;
+  alcatraz?: Alcatraz[];
+  dispatch?: Dispatch;
 }
 
-class App extends React.Component<any, void> {
+class App extends React.Component<AppProps, void> {
   render() {
     const { alcatraz,dispatch } = this.props;
     const actions = bindActionCreators(TodoActions, dispatch);
-    console.log(alcatraz);
 
     return (
       <div className="alcatrazapp">
