@@ -1,34 +1,32 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
+import {SearchQuery} from "../models/searchQuery";
 
 interface SearchTextInputProps {
-  text?: string;
-  placeholder?: string;
+  searchQuery: SearchQuery;
+  onChange: Function;
+  placeholder: string;
 }
 
-interface SearchTextInputState {
-  text: string;
-}
-
-class SearchTextInput extends React.Component<SearchTextInputProps, SearchTextInputState> {
+class SearchTextInput extends React.Component<SearchTextInputProps, void> {
   constructor(props, context) {
     super(props, context);
-    this.state = {
-      text: this.props.text || ''
-    };
   }
 
   handleChange(e) {
-    this.setState({text: e.target.value});
+    const {onChange} = this.props;
+    onChange(e.target.value);
   }
 
   render() {
+    const {placeholder, searchQuery} = this.props;
+
     return (
       <input
         type="text"
-        placeholder={this.props.placeholder}
+        placeholder={placeholder}
         autoFocus={true}
-        value={this.state.text}
+        value={searchQuery.text}
         onChange={this.handleChange.bind(this)}
       />
     );

@@ -9,7 +9,9 @@ import {PLUGIN,THEME,TEMPLATE} from "../constants/PackageTypes";
 import {connect} from "react-redux";
 import {CategoryFilter} from "../models/categoryFilter";
 import * as CategoryFilterActions from '../actions/categoryFilter';
+import * as SearchQueryActions from '../actions/searchQuery';
 import { bindActionCreators, Dispatch } from 'redux';
+import {SearchQuery} from "../models/searchQuery";
 
 const CATEGORY_FILTERS = {
   [SHOW_PLUGINS]: alcatraz => alcatraz.package_type === PLUGIN,
@@ -19,12 +21,13 @@ const CATEGORY_FILTERS = {
 
 interface HeaderProps {
   categoryFilter?: CategoryFilter;
+  searchQuery?: SearchQuery;
   dispatch?: Dispatch;
 }
 
 @connect(state => ({
-  alcatraz: state.alcatraz,
-  categoryFilter: state.categoryFilter
+  categoryFilter: state.categoryFilter,
+  searchQuery: state.searchQuery
 }))
 class Header extends React.Component<HeaderProps, void> {
   constructor(props, context) {
@@ -36,14 +39,22 @@ class Header extends React.Component<HeaderProps, void> {
     actions.updateFilter(categoryFilter);
   }
 
+  handleSearchQuery(searchQuery) {
+    const actions = bindActionCreators(SearchQueryActions, this.props.dispatch);
+    actions.updateSearchQuery(searchQuery);
+  }
+
   render() {
-    const {categoryFilter} = this.props;
+    const {categoryFilter, searchQuery} = this.props;
 
     return (
       <Jumbotron>
         <h1>Alcatraz Search</h1>
         <p>Search Alcatraz more better.</p>
-        <SearchTextInput placeholder="Input Alcatraz Package Name."/>
+        <SearchTextInput
+          searchQuery={searchQuery}
+          onChange={this.handleSearchQuery.bind(this)}
+          placeholder="Input Alcatraz Package Name."/>
         <SearchCategorySwitch
           filter={categoryFilter}
           onClick={this.handleClick.bind(this)}/>
