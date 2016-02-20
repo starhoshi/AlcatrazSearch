@@ -15,9 +15,12 @@ interface AppProps {
   dispatch?: Dispatch;
 }
 
+@connect(state => ({
+  alcatraz: state.alcatraz,
+  categoryFilter: state.categoryFilter
+}))
 class App extends React.Component<AppProps, void> {
   render() {
-    console.log(this.props);
     const { alcatraz,dispatch } = this.props;
     const actions = bindActionCreators(TodoActions, dispatch);
 
@@ -32,10 +35,4 @@ class App extends React.Component<AppProps, void> {
   }
 }
 
-const mapStateToProps = state => ({
-  alcatraz: state.alcatraz,
-  categoryFilter: state.categoryFilter
-});
-console.log(mapStateToProps);
-
-export default connect(mapStateToProps)(App);
+export default App;
