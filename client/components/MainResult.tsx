@@ -3,9 +3,13 @@ import * as classNames from 'classnames';
 import {Panel} from 'react-bootstrap';
 import {Alcatraz} from "../models/alcatraz";
 import {STARS} from "../constants/OrderByTypes";
+import {CategoryFilter} from "../models/categoryFilter";
+import {OrderBy} from "../models/orderBy";
 
 interface MainResultProps {
   alcatraz: Alcatraz[];
+  categoryFilter: CategoryFilter;
+  orderBy: OrderBy;
 }
 
 class MainResult extends React.Component<MainResultProps, void> {

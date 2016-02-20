@@ -3,6 +3,7 @@ import * as classNames from 'classnames';
 import {Nav,NavItem} from 'react-bootstrap';
 import * as Icon from 'react-fa';
 import {STARS,UPDATED,CREATED,WATCHES,FORKS,NAME} from "../constants/OrderByTypes";
+import {OrderBy} from "../models/orderBy";
 
 const ORDER_BY_TITLES = {
   [STARS]: 'Stars',
@@ -22,12 +23,13 @@ const ORDER_BY_ICONS = {
 };
 
 interface SortButtonToolbarProps {
+  orderBy: OrderBy;
+  actions: any;
 }
 
 class SortButtonToolbar extends React.Component<SortButtonToolbarProps, any> {
   constructor(props, context) {
     super(props, context);
-    this.state = {orderBy: STARS};
   }
 
   handleShow(orderBy) {
@@ -41,7 +43,7 @@ class SortButtonToolbar extends React.Component<SortButtonToolbarProps, any> {
       return (
         <NavItem
           key={orderBy}
-          active={orderBy === this.state.orderBy}
+          active={orderBy === this.props.orderBy.name}
           onClick={() => this.handleShow(orderBy)}>
           <Icon name={icon}/>
           {title}
