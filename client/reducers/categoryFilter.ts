@@ -10,6 +10,6 @@ const initialState =
 
 export default handleActions<CategoryFilter>({
   [UPDATE_FILTER]: (state:CategoryFilter, action:Action):CategoryFilter => {
-    return {name: action.payload};
+    return {name: action.payload.name};
   }
 }, initialState);

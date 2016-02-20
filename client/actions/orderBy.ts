@@ -4,7 +4,7 @@ import * as types from '../constants/ActionTypes';
 
 const updateOrderBy = createAction<OrderBy>(
   types.UPDATE_ORDER_BY,
-  OrderBy => OrderBy
+  name => <OrderBy>{name: name}
 );
 
 export {

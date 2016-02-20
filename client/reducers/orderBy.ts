@@ -10,6 +10,6 @@ const initialState =
 
 export default handleActions<OrderBy>({
   [UPDATE_ORDER_BY]: (state:OrderBy, action:Action):OrderBy => {
-    return {name: action.payload};
+    return {name: action.payload.name};
   }
 }, initialState);

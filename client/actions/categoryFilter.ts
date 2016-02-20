@@ -4,7 +4,7 @@ import * as types from '../constants/ActionTypes';
 
 const updateFilter = createAction<CategoryFilter>(
   types.UPDATE_FILTER,
-  CategoryFilter => CategoryFilter
+  name => <CategoryFilter>{name: name}
 );
 
 export {
