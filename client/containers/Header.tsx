@@ -31,13 +31,13 @@ class Header extends React.Component<HeaderProps, void> {
     super(props, context);
   }
 
-  handleShow(filter) {
+  handleClick(categoryFilter) {
     const actions = bindActionCreators(CategoryFilterActions, this.props.dispatch);
-    actions.updateFilter({name: filter});
+    actions.updateFilter(categoryFilter);
   }
 
   render() {
-    const filter = this.props.categoryFilter.name;
+    const {categoryFilter} = this.props;
 
     return (
       <Jumbotron>
@@ -45,8 +45,8 @@ class Header extends React.Component<HeaderProps, void> {
         <p>Search Alcatraz more better.</p>
         <SearchTextInput placeholder="Input Alcatraz Package Name."/>
         <SearchCategorySwitch
-          filter={filter}
-          onShow={this.handleShow.bind(this)}/>
+          filter={categoryFilter}
+          onClick={this.handleClick.bind(this)}/>
       </Jumbotron>
     );
   }

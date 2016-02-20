@@ -24,27 +24,20 @@ const ORDER_BY_ICONS = {
 
 interface SortButtonToolbarProps {
   orderBy: OrderBy;
-  actions: any;
+  onClick: Function;
 }
 
-class SortButtonToolbar extends React.Component<SortButtonToolbarProps, any> {
-  constructor(props, context) {
-    super(props, context);
-  }
-
-  handleShow(orderBy) {
-    this.setState({orderBy});
-  }
-
+class SortButtonToolbar extends React.Component<SortButtonToolbarProps, void> {
   renderOrderByNavItems() {
     return [STARS, UPDATED, CREATED, WATCHES, FORKS, NAME].map(orderBy => {
+      const { orderBy: selectedOrderBy, onClick } = this.props;
       const title = ORDER_BY_TITLES[orderBy];
       const icon = ORDER_BY_ICONS[orderBy];
       return (
         <NavItem
           key={orderBy}
-          active={orderBy === this.props.orderBy.name}
-          onClick={() => this.handleShow(orderBy)}>
+          active={orderBy === selectedOrderBy.name}
+          onClick={() => onClick(orderBy)}>
           <Icon name={icon}/>
           {title}
         </NavItem>

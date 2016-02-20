@@ -1,12 +1,10 @@
-import { createAction, Action } from 'redux-actions';
-import _ = require('lodash');
-
+import { createAction } from 'redux-actions';
 import { CategoryFilter } from '../models/categoryFilter';
 import * as types from '../constants/ActionTypes';
 
 const updateFilter = createAction<CategoryFilter>(
   types.UPDATE_FILTER,
-  (name:string) => <CategoryFilter>({name: name})
+  CategoryFilter => CategoryFilter
 );
 
 export {

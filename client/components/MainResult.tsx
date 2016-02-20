@@ -13,10 +13,6 @@ interface MainResultProps {
 }
 
 class MainResult extends React.Component<MainResultProps, void> {
-  constructor(props, context) {
-    super(props, context);
-  }
-
   render() {
     const { alcatraz } = this.props;
     return (

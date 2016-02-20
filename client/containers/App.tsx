@@ -6,7 +6,7 @@ import Header from './Header';
 import SortButtonToolbar from '../components/SortButtonToolbar';
 import MainResult from '../components/MainResult';
 import PageFooter from '../components/PageFooter';
-import * as TodoActions from '../actions/todos';
+import * as OrderByActions from '../actions/orderBy';
 import {Alcatraz} from '../models/alcatraz';
 import {OrderBy} from "../models/orderBy";
 import {CategoryFilter} from "../models/categoryFilter";
@@ -24,16 +24,21 @@ interface AppProps {
   orderBy: state.orderBy
 }))
 class App extends React.Component<AppProps, void> {
+  handleClick(orderBy) {
+    const { dispatch } = this.props;
+    const actions = bindActionCreators(OrderByActions, dispatch);
+    actions.updateOrderBy(orderBy);
+  }
+
   render() {
-    const { alcatraz, categoryFilter, orderBy, dispatch } = this.props;
-    const actions = bindActionCreators(TodoActions, dispatch);
+    const { alcatraz, categoryFilter, orderBy } = this.props;
 
     return (
       <div className="alcatrazapp">
         <Header/>
         <SortButtonToolbar
           orderBy={orderBy}
-          actions={actions}/>
+          onClick={this.handleClick.bind(this)}/>
         <MainResult
           alcatraz={alcatraz}
           orderBy={orderBy}
