@@ -5,6 +5,8 @@ import * as ReactDOM from 'react-dom';
 import { Action } from 'redux-actions';
 import App from './containers/App';
 import { rootReducer } from './reducers/rootReducer';
+import { applyMiddleware } from 'redux';
+import createLogger = require('redux-logger');
 
 import {
   Store,
@@ -21,7 +23,10 @@ import {
 
 const initialState = {};
 
-const store:Store = createStore(rootReducer, initialState);
+
+const loggerMiddleware = (createLogger as any)();
+const createStoreWithMiddleware = applyMiddleware(loggerMiddleware)(createStore);
+const store:Store = createStoreWithMiddleware(rootReducer, initialState);
 
 ReactDOM.render(
   <Provider store={store}>
@@ -29,5 +34,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('app')
 );
-
-

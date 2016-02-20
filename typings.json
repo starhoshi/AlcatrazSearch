@@ -12,6 +12,7 @@
     "react-fa": "github:DefinitelyTyped/DefinitelyTyped/react-fa/react-fa.d.ts#f318fbd33149ef0921b84657996ad31dab1e3241",
     "react-redux": "github:DefinitelyTyped/DefinitelyTyped/react-redux/react-redux.d.ts#ba257a9b91bc0de1bdd9091b6723194c905a902a",
     "redux": "github:DefinitelyTyped/DefinitelyTyped/redux/redux.d.ts#ba257a9b91bc0de1bdd9091b6723194c905a902a",
-    "redux-actions": "github:DefinitelyTyped/DefinitelyTyped/redux-actions/redux-actions.d.ts#ba257a9b91bc0de1bdd9091b6723194c905a902a"
+    "redux-actions": "github:DefinitelyTyped/DefinitelyTyped/redux-actions/redux-actions.d.ts#ba257a9b91bc0de1bdd9091b6723194c905a902a",
+    "redux-logger": "github:DefinitelyTyped/DefinitelyTyped/redux-logger/redux-logger.d.ts#299be13624c3998ca5ca0f146202723e25eeb465"
   }
 }
