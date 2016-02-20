@@ -1,11 +1,15 @@
 import * as React from 'react';
 
 import {Jumbotron} from 'react-bootstrap';
-import SearchTextInput from './SearchTextInput';
-import SearchCategorySwitch from './SearchCategorySwitch';
+import SearchTextInput from './../components/SearchTextInput';
+import SearchCategorySwitch from './../components/SearchCategorySwitch';
 
 import {SHOW_PLUGINS,SHOW_THEMES,SHOW_TEMPLATES} from '../constants/CategoryFilters';
 import {PLUGIN,THEME,TEMPLATE} from "../constants/PackageTypes";
+import {connect} from "react-redux";
+import {CategoryFilter} from "../models/categoryFilter";
+import * as CategoryFilterActions from '../actions/categoryFilter';
+import { bindActionCreators, Dispatch } from 'redux';
 
 const CATEGORY_FILTERS = {
   [SHOW_PLUGINS]: alcatraz => alcatraz.package_type === PLUGIN,
@@ -14,24 +18,26 @@ const CATEGORY_FILTERS = {
 };
 
 interface HeaderProps {
+  categoryFilter?: CategoryFilter;
+  dispatch?: Dispatch;
 }
 
-interface HeaderState {
-  filter: string;
-}
-
-class Header extends React.Component<HeaderProps, HeaderState> {
+@connect(state => ({
+  alcatraz: state.alcatraz,
+  categoryFilter: state.categoryFilter
+}))
+class Header extends React.Component<HeaderProps, void> {
   constructor(props, context) {
     super(props, context);
-    this.state = {filter: SHOW_PLUGINS};
   }
 
   handleShow(filter) {
-    this.setState({filter});
+    const actions = bindActionCreators(CategoryFilterActions, this.props.dispatch);
+    actions.updateFilter({name: filter});
   }
 
   render() {
-    const { filter } = this.state;
+    const filter = this.props.categoryFilter.name;
 
     return (
       <Jumbotron>
