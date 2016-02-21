@@ -5,6 +5,15 @@ import {Alcatraz} from "../models/alcatraz";
 import {STARS} from "../constants/OrderByTypes";
 import {CategoryFilter} from "../models/categoryFilter";
 import {OrderBy} from "../models/orderBy";
+import {SHOW_PLUGINS, SHOW_TEMPLATES, SHOW_THEMES} from "../constants/CategoryFilters";
+import {PLUGIN, TEMPLATE, THEME} from "../constants/PackageTypes";
+import _ = require('lodash');
+
+const PACKAGE_FILTERS = {
+  [SHOW_PLUGINS]: alcatraz => alcatraz.package_type === PLUGIN,
+  [SHOW_TEMPLATES]: alcatraz => alcatraz.package_type === TEMPLATE,
+  [SHOW_THEMES]: alcatraz => alcatraz.package_type === THEME
+};
 
 interface MainResultProps {
   alcatraz: Alcatraz[];
@@ -14,10 +23,13 @@ interface MainResultProps {
 
 class MainResult extends React.Component<MainResultProps, void> {
   render() {
-    const { alcatraz } = this.props;
+    const { alcatraz, categoryFilter, orderBy } = this.props;
+    const filteredAlcatraz = alcatraz.filter(PACKAGE_FILTERS[categoryFilter.name]);
+    //const sortedAlcatraz = _.sortByOrder(filteredAlcatraz, orderBy.name, ['desc']);
+
     return (
       <div>
-        {alcatraz.map((al,i)=>
+        {filteredAlcatraz.map((al,i)=>
         <Panel key={i} header={al.name}>
           <p>{i + 1}</p>
           <p>{al.description}</p>
