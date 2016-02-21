@@ -5,13 +5,15 @@ import alcatraz from './alcatraz';
 import orderBy from './orderBy';
 import categoryFilter from './categoryFilter';
 import searchQuery from './searchQuery';
+import api from './api';
 
 const rootReducer = combineReducers({
   todos: todos,
   alcatraz: alcatraz,
   categoryFilter: categoryFilter,
   orderBy: orderBy,
-  searchQuery: searchQuery
+  searchQuery: searchQuery,
+  api: api
 });
 
 export { rootReducer };
