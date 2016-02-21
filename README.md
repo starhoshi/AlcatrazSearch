@@ -1,5 +1,7 @@
 # AlcatrazSearch
 
+[![Build Status](https://travis-ci.org/starhoshi/AlcatrazSearch.svg?branch=master)](https://travis-ci.org/starhoshi/AlcatrazSearch)
+
 Search [Alcatraz](http://alcatraz.io/) better.
 
 ## Getting Started
