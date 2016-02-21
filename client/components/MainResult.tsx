@@ -29,12 +29,11 @@ class MainResult extends React.Component<MainResultProps, void> {
     return alcatraz.name.indexOf(queryText) !== -1 || alcatraz.description.indexOf(queryText) !== -1
   };
 
-
   render() {
     const { alcatraz, categoryFilter, orderBy, searchQuery } = this.props;
     const filteredAlcatraz = alcatraz.filter(PACKAGE_FILTERS[categoryFilter.name]);
     const queryFilteredAlcatraz = filteredAlcatraz.filter(
-      alcatraz => this.matchedQueryPartially(alcatraz,searchQuery.text));
+      alcatraz => this.matchedQueryPartially(alcatraz, searchQuery.text));
     const sortedAlcatraz = _.orderBy(queryFilteredAlcatraz, orderBy.name, ['desc']);
 
     return (
