@@ -10,18 +10,21 @@ import * as OrderByActions from '../actions/orderBy';
 import {Alcatraz} from '../models/alcatraz';
 import {OrderBy} from "../models/orderBy";
 import {CategoryFilter} from "../models/categoryFilter";
+import {SearchQuery} from "../models/searchQuery";
 
 interface AppProps {
   alcatraz?: Alcatraz[];
   categoryFilter?: CategoryFilter;
   orderBy?: OrderBy;
+  searchQuery?: SearchQuery;
   dispatch?: Dispatch;
 }
 
 @connect(state => ({
   alcatraz: state.alcatraz,
   categoryFilter: state.categoryFilter,
-  orderBy: state.orderBy
+  orderBy: state.orderBy,
+  searchQuery: state.searchQuery
 }))
 class App extends React.Component<AppProps, void> {
   handleClick(orderBy) {
@@ -31,7 +34,7 @@ class App extends React.Component<AppProps, void> {
   }
 
   render() {
-    const { alcatraz, categoryFilter, orderBy } = this.props;
+    const { alcatraz, categoryFilter, orderBy, searchQuery } = this.props;
 
     return (
       <div className="alcatrazapp">
@@ -42,6 +45,7 @@ class App extends React.Component<AppProps, void> {
         <MainResult
           alcatraz={alcatraz}
           orderBy={orderBy}
+          searchQuery={searchQuery}
           categoryFilter={categoryFilter}/>
         <PageFooter/>
       </div>
