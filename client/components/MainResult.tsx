@@ -9,6 +9,7 @@ import {SHOW_PLUGINS, SHOW_TEMPLATES, SHOW_THEMES} from "../constants/CategoryFi
 import {PLUGIN, TEMPLATE, THEME} from "../constants/PackageTypes";
 import _ = require('lodash');
 import {SearchQuery} from "../models/searchQuery";
+import * as Highlighter from "react-highlighter";
 
 const PACKAGE_FILTERS = {
   [SHOW_PLUGINS]: alcatraz => alcatraz.package_type === PLUGIN,
@@ -29,6 +30,15 @@ class MainResult extends React.Component<MainResultProps, void> {
     return alcatraz.name.indexOf(queryText) !== -1 || alcatraz.description.indexOf(queryText) !== -1
   };
 
+  renderPanelHeader = (alcatraz:Alcatraz) => {
+    const { searchQuery } = this.props;
+    return (
+      <Highlighter search={searchQuery.text}>
+        {alcatraz.name}
+      </Highlighter>
+    );
+  };
+
   render() {
     const { alcatraz, categoryFilter, orderBy, searchQuery } = this.props;
     const filteredAlcatraz = alcatraz.filter(PACKAGE_FILTERS[categoryFilter.name]);
@@ -38,13 +48,16 @@ class MainResult extends React.Component<MainResultProps, void> {
 
     return (
       <div>
-        {sortedAlcatraz.map((al,i)=>
-        <Panel key={i} header={al.name}>
+        {sortedAlcatraz.map((alcatraz,i)=>
+        <Panel key={i}
+               header={this.renderPanelHeader(alcatraz)}>
           <p>{i + 1}</p>
-          <p>{al.description}</p>
-          <p>{al.stargazers_count}</p>
-          <a href={al.url}>{al.name}</a>
-          <img src={al.screenshot}/>
+          <Highlighter search={searchQuery.text}>
+            {alcatraz.description}
+          </Highlighter>
+          <p>{alcatraz.stargazers_count}</p>
+          <a href={alcatraz.url}>{alcatraz.name}</a>
+          <img src={alcatraz.screenshot}/>
         </Panel>
           )}
       </div>
