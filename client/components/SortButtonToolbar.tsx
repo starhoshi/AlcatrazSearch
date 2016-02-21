@@ -19,7 +19,7 @@ const ORDER_BY_ICONS = {
   [UPDATED]: 'clock-o',
   [CREATED]: 'calendar',
   [WATCHES]: 'eye',
-  [CONTRIBUTORS]: 'user',
+  [CONTRIBUTORS]: 'users',
   [FORKS]: 'code-fork',
   [NAME]: 'sort-alpha-asc',
 };

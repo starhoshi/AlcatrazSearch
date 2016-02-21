@@ -21,7 +21,7 @@ const initialState = [
     pushed_at: "2011-01-26T19:14:43Z"
   },
   <Alcatraz>{
-    name: "2",
+    name: "aaa1",
     url: "https://github.com/hunk3000/HKSnippet",
     description: "2",
     screenshot: null,

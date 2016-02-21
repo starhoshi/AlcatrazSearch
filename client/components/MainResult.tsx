@@ -25,11 +25,11 @@ class MainResult extends React.Component<MainResultProps, void> {
   render() {
     const { alcatraz, categoryFilter, orderBy } = this.props;
     const filteredAlcatraz = alcatraz.filter(PACKAGE_FILTERS[categoryFilter.name]);
-    //const sortedAlcatraz = _.sortByOrder(filteredAlcatraz, orderBy.name, ['desc']);
+    const sortedAlcatraz = _.orderBy(filteredAlcatraz, orderBy.name, ['desc']);
 
     return (
       <div>
-        {filteredAlcatraz.map((al,i)=>
+        {sortedAlcatraz.map((al,i)=>
         <Panel key={i} header={al.name}>
           <p>{i + 1}</p>
           <p>{al.description}</p>
