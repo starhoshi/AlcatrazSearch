@@ -4,6 +4,7 @@
     "assertion-error": "github:DefinitelyTyped/DefinitelyTyped/assertion-error/assertion-error.d.ts#bcd5761826eb567876c197ccc6a87c4d05731054",
     "chai": "github:DefinitelyTyped/DefinitelyTyped/chai/chai.d.ts#bcd5761826eb567876c197ccc6a87c4d05731054",
     "classnames": "github:DefinitelyTyped/DefinitelyTyped/classnames/classnames.d.ts#ba257a9b91bc0de1bdd9091b6723194c905a902a",
+    "es6-promise": "github:DefinitelyTyped/DefinitelyTyped/es6-promise/es6-promise.d.ts#830e8ebd9ef137d039d5c7ede24a421f08595f83",
     "isomorphic-fetch": "github:DefinitelyTyped/DefinitelyTyped/isomorphic-fetch/isomorphic-fetch.d.ts#83a71a28177843c3a65587588c5fc37ef193a75f",
     "lodash": "github:DefinitelyTyped/DefinitelyTyped/lodash/lodash.d.ts#7b7aa2027a8fb6219a8bcf1b6bb12bcd0ff9539d",
     "mocha": "github:DefinitelyTyped/DefinitelyTyped/mocha/mocha.d.ts#ba257a9b91bc0de1bdd9091b6723194c905a902a",
