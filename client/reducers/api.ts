@@ -1,15 +1,18 @@
 import { handleActions, Action } from 'redux-actions';
-import { FETCH_ALCATRAZ,RECEIVE_ALCATRAZ} from '../constants/ActionTypes';
+import { FETCH_ALCATRAZ,RECEIVE_ALCATRAZ,RECEIVE_ERROR} from '../constants/ActionTypes';
 import {Alcatraz} from "../models/alcatraz";
 import {Api} from "../models/api";
 
 const initialState = {};
 
 export default handleActions<any>({
-  [FETCH_ALCATRAZ]: (state : any, action : Action) : Api => {
-    return {loading: true, result: []};
+  [FETCH_ALCATRAZ]: (state:any, action:Action):Api => {
+    return {loading: true, error: false, result: []};
   },
-  [RECEIVE_ALCATRAZ]: (state : any, action : Action) : Api => {
-    return {loading: false, result: action.payload.result};
+  [RECEIVE_ERROR]: (state:any, action:Action):Api => {
+    return {loading: false, error: true, result: []};
+  },
+  [RECEIVE_ALCATRAZ]: (state:any, action:Action):Api => {
+    return {loading: false, error: false, result: action.payload.result};
   }
 }, initialState);
