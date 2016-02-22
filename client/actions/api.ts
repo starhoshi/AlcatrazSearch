@@ -7,7 +7,7 @@ import 'isomorphic-fetch';
 
 const requestAlcatraz = createAction<Api>(
   types.FETCH_ALCATRAZ,
-  () => <Api>{loading: true, result: ""}
+  () => <Api>{loading: true, result: []}
 );
 
 const receiveAlcatraz = createAction<Api>(

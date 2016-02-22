@@ -1,18 +1,15 @@
 import { handleActions, Action } from 'redux-actions';
-//import { CategoryFilter } from '../models/categoryFilter';
-//import { SHOW_PLUGINS } from '../constants/CategoryFilters';
 import { FETCH_ALCATRAZ,RECEIVE_ALCATRAZ} from '../constants/ActionTypes';
 import {Alcatraz} from "../models/alcatraz";
+import {Api} from "../models/api";
 
 const initialState = {};
 
 export default handleActions<any>({
-  [FETCH_ALCATRAZ]: (state:any, action:Action):any => {
-    console.log(state, action);
-    return {isFetching: true};
+  [FETCH_ALCATRAZ]: (state : any, action : Action) : Api => {
+    return {loading: true, result: []};
   },
-  [RECEIVE_ALCATRAZ]: (state:any, action:Action):any => {
-    console.log(state, action);
-    return {isFetching: false};
+  [RECEIVE_ALCATRAZ]: (state : any, action : Action) : Api => {
+    return {loading: false, result: action.payload.result};
   }
 }, initialState);
