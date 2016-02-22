@@ -3,7 +3,7 @@ import { FETCH_ALCATRAZ,RECEIVE_ALCATRAZ,RECEIVE_ERROR} from '../constants/Actio
 import {Alcatraz} from "../models/alcatraz";
 import {Api} from "../models/api";
 
-const initialState = {};
+const initialState = {loading: true, error: false, result: []};
 
 export default handleActions<any>({
   [FETCH_ALCATRAZ]: (state:any, action:Action):Api => {

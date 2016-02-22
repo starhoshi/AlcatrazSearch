@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 import {Panel} from 'react-bootstrap';
-import {Alcatraz} from "../models/alcatraz";
+import {Api} from "../models/api";
 import {STARS} from "../constants/OrderByTypes";
 import {CategoryFilter} from "../models/categoryFilter";
 import {OrderBy} from "../models/orderBy";
@@ -11,6 +11,7 @@ import _ = require('lodash');
 import {SearchQuery} from "../models/searchQuery";
 import * as Highlighter from "react-highlighter";
 import * as Spinner from 'react-spinkit';
+import {Alcatraz} from "../models/alcatraz";
 
 
 const PACKAGE_FILTERS = {
@@ -21,7 +22,7 @@ const PACKAGE_FILTERS = {
 
 
 interface MainResultProps {
-  alcatraz: Alcatraz[];
+  api: Api;
   categoryFilter: CategoryFilter;
   orderBy: OrderBy;
   searchQuery: SearchQuery;
@@ -42,8 +43,8 @@ class MainResult extends React.Component<MainResultProps, void> {
   };
 
   render() {
-    const { alcatraz, categoryFilter, orderBy, searchQuery } = this.props;
-    const filteredAlcatraz = alcatraz.filter(PACKAGE_FILTERS[categoryFilter.name]);
+    const { api, categoryFilter, orderBy, searchQuery } = this.props;
+    const filteredAlcatraz = api.result.filter(PACKAGE_FILTERS[categoryFilter.name]);
     const queryFilteredAlcatraz = filteredAlcatraz.filter(
       alcatraz => this.matchedQueryPartially(alcatraz, searchQuery.text));
     const sortedAlcatraz = _.orderBy(queryFilteredAlcatraz, orderBy.name, ['desc']);

@@ -7,13 +7,13 @@ import SortButtonToolbar from '../components/SortButtonToolbar';
 import MainResult from '../components/MainResult';
 import PageFooter from '../components/PageFooter';
 import * as OrderByActions from '../actions/orderBy';
-import {Alcatraz} from '../models/alcatraz';
+import {Api} from '../models/api';
 import {OrderBy} from "../models/orderBy";
 import {CategoryFilter} from "../models/categoryFilter";
 import {SearchQuery} from "../models/searchQuery";
 
 interface AppProps {
-  alcatraz?: Alcatraz[];
+  api?: Api;
   categoryFilter?: CategoryFilter;
   orderBy?: OrderBy;
   searchQuery?: SearchQuery;
@@ -21,7 +21,7 @@ interface AppProps {
 }
 
 @connect(state => ({
-  alcatraz: state.alcatraz,
+  api: state.api,
   categoryFilter: state.categoryFilter,
   orderBy: state.orderBy,
   searchQuery: state.searchQuery
@@ -34,7 +34,7 @@ class App extends React.Component<AppProps, void> {
   }
 
   render() {
-    const { alcatraz, categoryFilter, orderBy, searchQuery } = this.props;
+    const { api, categoryFilter, orderBy, searchQuery } = this.props;
 
     return (
       <div className="alcatrazapp">
@@ -43,7 +43,7 @@ class App extends React.Component<AppProps, void> {
           orderBy={orderBy}
           onClick={this.handleClick.bind(this)}/>
         <MainResult
-          alcatraz={alcatraz}
+          api={api}
           orderBy={orderBy}
           searchQuery={searchQuery}
           categoryFilter={categoryFilter}/>
