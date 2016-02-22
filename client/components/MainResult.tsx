@@ -10,6 +10,8 @@ import {PLUGIN, TEMPLATE, THEME} from "../constants/PackageTypes";
 import _ = require('lodash');
 import {SearchQuery} from "../models/searchQuery";
 import * as Highlighter from "react-highlighter";
+import * as Spinner from 'react-spinkit';
+
 
 const PACKAGE_FILTERS = {
   [SHOW_PLUGINS]: alcatraz => alcatraz.package_type === PLUGIN,
@@ -48,6 +50,7 @@ class MainResult extends React.Component<MainResultProps, void> {
 
     return (
       <div>
+        <Spinner spinnerName='wave'/>
         {sortedAlcatraz.map((alcatraz,i)=>
         <Panel key={i}
                header={this.renderPanelHeader(alcatraz)}>
