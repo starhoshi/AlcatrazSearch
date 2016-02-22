@@ -51,7 +51,7 @@ class MainResult extends React.Component<MainResultProps, void> {
 
     return (
       <div>
-        <Spinner spinnerName='wave'/>
+        {api.loading ? <Spinner spinnerName='wave'/> : null}
         {sortedAlcatraz.map((alcatraz,i)=>
         <Panel key={i}
                header={this.renderPanelHeader(alcatraz)}>
