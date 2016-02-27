@@ -1,3 +1,3 @@
-export const PLUGIN = 'PLUGIN';
-export const THEME = 'THEME';
-export const TEMPLATE = 'TEMPLATE';
+export const PLUGINS = 'plugins';
+export const THEMES = 'color_schemes';
+export const TEMPLATES = 'file_templates';

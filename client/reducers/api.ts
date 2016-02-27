@@ -6,13 +6,13 @@ import {Api} from "../models/api";
 const initialState = {loading: true, error: false, result: []};
 
 export default handleActions<any>({
-  [FETCH_ALCATRAZ]: (state:any, action:Action):Api => {
-    return {loading: true, error: false, result: []};
+  [FETCH_ALCATRAZ]: (state : any, action : Action) : Api => {
+    return {loading: true, error: false, result: null};
   },
-  [RECEIVE_ERROR]: (state:any, action:Action):Api => {
-    return {loading: false, error: true, result: []};
+  [RECEIVE_ERROR]: (state : any, action : Action) : Api => {
+    return {loading: false, error: true, result: null};
   },
-  [RECEIVE_ALCATRAZ]: (state:any, action:Action):Api => {
+  [RECEIVE_ALCATRAZ]: (state : any, action : Action) : Api => {
     return {loading: false, error: false, result: action.payload.result};
   }
 }, initialState);

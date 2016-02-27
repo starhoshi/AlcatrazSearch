@@ -1,7 +1,7 @@
-import {Alcatraz} from "../models/alcatraz";
+import {AlcatrazPackages} from "../models/alcatrazPackages";
 
 export type Api = {
   loading: boolean;
   error: boolean;
-  result: Alcatraz[];
+  result?: AlcatrazPackages;
 };
