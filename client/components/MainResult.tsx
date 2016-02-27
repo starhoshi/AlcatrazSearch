@@ -11,6 +11,7 @@ import _ = require('lodash');
 import {SearchQuery} from "../models/searchQuery";
 import * as Highlighter from "react-highlighter";
 import * as Spinner from 'react-spinkit';
+import * as ReactList from 'react-list';
 import {Alcatraz} from "../models/alcatraz";
 
 
@@ -28,6 +29,8 @@ interface MainResultProps {
 }
 
 class MainResult extends React.Component<MainResultProps, void> {
+  sortedAlcatraz : Alcatraz[];
+
   matchedQueryPartially = (alcatraz : Alcatraz, queryText : string) : boolean => {
     return alcatraz.name.indexOf(queryText) !== -1 || alcatraz.description.indexOf(queryText) !== -1
   };
@@ -52,25 +55,33 @@ class MainResult extends React.Component<MainResultProps, void> {
     return [];
   };
 
+  renderPanel = (index, key) => {
+    const { searchQuery } = this.props;
+    return (
+      <Panel key={key}
+             header={this.renderPanelHeader(this.sortedAlcatraz[index])}>
+        <p>{index + 1}</p>
+        <Highlighter search={searchQuery.text}>
+          {this.sortedAlcatraz[index].description}
+        </Highlighter>
+        <p>{this.sortedAlcatraz[index].stargazers_count}</p>
+        <a href={this.sortedAlcatraz[index].url}>{this.sortedAlcatraz[index].name}</a>
+        <img src={this.sortedAlcatraz[index].screenshot}/>
+      </Panel>
+    )
+  };
+
   render() {
-    const { api, categoryFilter, orderBy, searchQuery } = this.props;
-    const sortedAlcatraz = this.filterSortResult();
+    const { api } = this.props;
+    this.sortedAlcatraz = this.filterSortResult();
 
     return (
       <div>
         {api.loading ? <Spinner spinnerName='wave'/> : null}
-        {sortedAlcatraz.map((alcatraz,i)=>
-        <Panel key={i}
-               header={this.renderPanelHeader(alcatraz)}>
-          <p>{i + 1}</p>
-          <Highlighter search={searchQuery.text}>
-            {alcatraz.description}
-          </Highlighter>
-          <p>{alcatraz.stargazers_count}</p>
-          <a href={alcatraz.url}>{alcatraz.name}</a>
-          <img src={alcatraz.screenshot}/>
-        </Panel>
-          )}
+        <ReactList
+          length={this.sortedAlcatraz.length}
+          itemRenderer={this.renderPanel}
+        />
       </div>
     );
   }
