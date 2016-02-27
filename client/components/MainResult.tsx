@@ -32,7 +32,8 @@ class MainResult extends React.Component<MainResultProps, void> {
   sortedAlcatraz : Alcatraz[];
 
   matchedQueryPartially = (alcatraz : Alcatraz, queryText : string) : boolean => {
-    return alcatraz.name.indexOf(queryText) !== -1 || alcatraz.description.indexOf(queryText) !== -1
+    return _.lowerCase(alcatraz.name).indexOf(queryText) !== -1
+      || _.lowerCase(alcatraz.description).indexOf(queryText) !== -1;
   };
 
   renderPanelHeader = (alcatraz : Alcatraz) => {
@@ -57,11 +58,12 @@ class MainResult extends React.Component<MainResultProps, void> {
 
   renderPanel = (index, key) => {
     const { searchQuery } = this.props;
+    const lowerCaseSearchQuery = _.lowerCase(searchQuery.text);
     return (
       <Panel key={key}
              header={this.renderPanelHeader(this.sortedAlcatraz[index])}>
         <p>{index + 1}</p>
-        <Highlighter search={searchQuery.text}>
+        <Highlighter search={lowerCaseSearchQuery}>
           {this.sortedAlcatraz[index].description}
         </Highlighter>
         <p>{this.sortedAlcatraz[index].stargazers_count}</p>
