@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 import {SearchQuery} from "../models/searchQuery";
+import {Col, Grid} from 'react-bootstrap';
 
 interface SearchTextInputProps {
   searchQuery: SearchQuery;
@@ -22,13 +23,17 @@ class SearchTextInput extends React.Component<SearchTextInputProps, void> {
     const {placeholder, searchQuery} = this.props;
 
     return (
-      <input
-        type="text"
-        placeholder={placeholder}
-        autoFocus={true}
-        value={searchQuery.text}
-        onChange={this.handleChange.bind(this)}
-      />
+      <Grid>
+        <Col xs={3} xsOffset={3}>
+          <input
+            type="text"
+            placeholder={placeholder}
+            autoFocus={true}
+            value={searchQuery.text}
+            onChange={this.handleChange.bind(this)}
+          />
+        </Col>
+      </Grid>
     );
   }
 }

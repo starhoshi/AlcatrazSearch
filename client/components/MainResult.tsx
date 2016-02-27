@@ -73,7 +73,6 @@ class MainResult extends React.Component<MainResultProps, void> {
   };
 
   render() {
-    //const { api } = this.props;
     const { api, categoryFilter, orderBy, searchQuery } = this.props;
     this.sortedAlcatraz = this.filterSortResult();
 

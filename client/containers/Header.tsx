@@ -42,15 +42,17 @@ class Header extends React.Component<HeaderProps, void> {
 
     return (
       <Jumbotron>
-        <h1>Alcatraz Search</h1>
-        <p>Search Alcatraz more better.</p>
-        <SearchTextInput
-          searchQuery={searchQuery}
-          onChange={this.handleSearchQuery.bind(this)}
-          placeholder="Input Alcatraz Package Name."/>
-        <SearchCategorySwitch
-          filter={categoryFilter}
-          onClick={this.handleClick.bind(this)}/>
+        <div className="container">
+          <h1>Alcatraz Search</h1>
+          <p>Search Alcatraz more better.</p>
+          <SearchTextInput
+            searchQuery={searchQuery}
+            onChange={this.handleSearchQuery.bind(this)}
+            placeholder="Input Alcatraz Package Name."/>
+          <SearchCategorySwitch
+            filter={categoryFilter}
+            onClick={this.handleClick.bind(this)}/>
+        </div>
       </Jumbotron>
     );
   }

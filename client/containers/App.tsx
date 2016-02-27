@@ -39,15 +39,17 @@ class App extends React.Component<AppProps, void> {
     return (
       <div className="alcatrazapp">
         <Header/>
-        <SortButtonToolbar
-          orderBy={orderBy}
-          onClick={this.handleClick.bind(this)}/>
-        <MainResult
-          api={api}
-          orderBy={orderBy}
-          searchQuery={searchQuery}
-          categoryFilter={categoryFilter}/>
-        <PageFooter/>
+        <div className="container">
+          <SortButtonToolbar
+            orderBy={orderBy}
+            onClick={this.handleClick.bind(this)}/>
+          <MainResult
+            api={api}
+            orderBy={orderBy}
+            searchQuery={searchQuery}
+            categoryFilter={categoryFilter}/>
+          <PageFooter/>
+        </div>
       </div>
     );
   }
