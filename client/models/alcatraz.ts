@@ -7,7 +7,6 @@ export type Alcatraz = {
   stargazers_count: number;
   forks_count: number;
   watchers_count: number;
-  contributors_count: number;
   package_type: string;
   updated_at: string;
   created_at: string;
