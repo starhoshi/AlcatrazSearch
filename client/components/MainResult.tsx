@@ -29,14 +29,14 @@ interface MainResultProps {
 }
 
 class MainResult extends React.Component<MainResultProps, void> {
-  sortedAlcatraz : Alcatraz[];
+  sortedAlcatraz:Alcatraz[];
 
-  matchedQueryPartially = (alcatraz : Alcatraz, queryText : string) : boolean => {
+  matchedQueryPartially = (alcatraz:Alcatraz, queryText:string):boolean => {
     return _.lowerCase(alcatraz.name).indexOf(queryText) !== -1
       || _.lowerCase(alcatraz.description).indexOf(queryText) !== -1;
   };
 
-  renderPanelHeader = (alcatraz : Alcatraz) => {
+  renderPanelHeader = (alcatraz:Alcatraz) => {
     const { searchQuery } = this.props;
     return (
       <Highlighter search={searchQuery.text}>
@@ -45,17 +45,13 @@ class MainResult extends React.Component<MainResultProps, void> {
     );
   };
 
-  filterSortResult = () : Alcatraz[] => {
+  filterSortResult = ():Alcatraz[] => {
     const { api, categoryFilter, orderBy, searchQuery } = this.props;
     if (api.result) {
-      const filteredAlcatraz : Alcatraz[] = api.result[PACKAGE_TYPES[categoryFilter.name]];
-      const queryFilteredAlcatraz : Alcatraz[] = filteredAlcatraz.filter(
+      const filteredAlcatraz:Alcatraz[] = api.result[PACKAGE_TYPES[categoryFilter.name]];
+      const queryFilteredAlcatraz:Alcatraz[] = filteredAlcatraz.filter(
         alcatraz => this.matchedQueryPartially(alcatraz, _.lowerCase(searchQuery.text)));
-      console.log(queryFilteredAlcatraz);
-      console.log(orderBy.name);
-      let re = _.orderBy(queryFilteredAlcatraz, orderBy.name, ['desc']);
-      console.log(re);
-      return re;
+      return _.orderBy(queryFilteredAlcatraz, orderBy.name, ['desc']);
     }
     return [];
   };
