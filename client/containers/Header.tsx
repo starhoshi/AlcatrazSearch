@@ -44,7 +44,6 @@ class Header extends React.Component<HeaderProps, void> {
       <Jumbotron>
         <div className="container">
           <h1>Alcatraz Search</h1>
-          <p>Search Alcatraz more better.</p>
           <SearchTextInput
             searchQuery={searchQuery}
             onChange={this.handleSearchQuery.bind(this)}

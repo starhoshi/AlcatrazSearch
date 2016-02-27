@@ -24,8 +24,9 @@ class SearchTextInput extends React.Component<SearchTextInputProps, void> {
 
     return (
       <Grid>
-        <Col xs={3} xsOffset={3}>
+        <Col xs={12} xsOffset={0} md={8} mdOffset={2}>
           <input
+            className="form-control"
             type="text"
             placeholder={placeholder}
             autoFocus={true}
@@ -37,6 +38,5 @@ class SearchTextInput extends React.Component<SearchTextInputProps, void> {
     );
   }
 }
-
 
 export default SearchTextInput;
