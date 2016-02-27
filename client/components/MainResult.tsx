@@ -50,20 +50,23 @@ class MainResult extends React.Component<MainResultProps, void> {
     if (api.result) {
       const filteredAlcatraz : Alcatraz[] = api.result[PACKAGE_TYPES[categoryFilter.name]];
       const queryFilteredAlcatraz : Alcatraz[] = filteredAlcatraz.filter(
-        alcatraz => this.matchedQueryPartially(alcatraz, searchQuery.text));
-      return _.orderBy(queryFilteredAlcatraz, orderBy.name, ['desc']);
+        alcatraz => this.matchedQueryPartially(alcatraz, _.lowerCase(searchQuery.text)));
+      console.log(queryFilteredAlcatraz);
+      console.log(orderBy.name);
+      let re = _.orderBy(queryFilteredAlcatraz, orderBy.name, ['desc']);
+      console.log(re);
+      return re;
     }
     return [];
   };
 
   renderPanel = (index, key) => {
     const { searchQuery } = this.props;
-    const lowerCaseSearchQuery = _.lowerCase(searchQuery.text);
     return (
       <Panel key={key}
              header={this.renderPanelHeader(this.sortedAlcatraz[index])}>
         <p>{index + 1}</p>
-        <Highlighter search={lowerCaseSearchQuery}>
+        <Highlighter search={searchQuery.text}>
           {this.sortedAlcatraz[index].description}
         </Highlighter>
         <p>{this.sortedAlcatraz[index].stargazers_count}</p>
@@ -74,7 +77,8 @@ class MainResult extends React.Component<MainResultProps, void> {
   };
 
   render() {
-    const { api } = this.props;
+    //const { api } = this.props;
+    const { api, categoryFilter, orderBy, searchQuery } = this.props;
     this.sortedAlcatraz = this.filterSortResult();
 
     return (
@@ -83,6 +87,7 @@ class MainResult extends React.Component<MainResultProps, void> {
         <ReactList
           length={this.sortedAlcatraz.length}
           itemRenderer={this.renderPanel}
+          updateWhenThisValueChanges={categoryFilter.name + orderBy.name + searchQuery.text}
         />
       </div>
     );
