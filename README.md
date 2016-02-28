@@ -1,8 +1,10 @@
 # AlcatrazSearch
 
 [![Build Status](https://travis-ci.org/starhoshi/AlcatrazSearch.svg?branch=master)](https://travis-ci.org/starhoshi/AlcatrazSearch)
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
-Search [Alcatraz](http://alcatraz.io/) better.
+
+Search [Alcatraz](http://alcatraz.io/) more better.
 
 ## Getting Started
 
