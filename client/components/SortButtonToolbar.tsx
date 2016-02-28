@@ -33,11 +33,11 @@ class SortButtonToolbar extends React.Component<SortButtonToolbarProps, void> {
     const { lastUpdate } = this.props;
     return (
       <div className="order-by-nav">
-        <span className="last-update">data last-update: {lastUpdate}</span>
         <label className="order-by">ORDER BY:</label>
         <Nav bsStyle="pills">
           {this.renderOrderByNavItems()}
         </Nav>
+        <span className="last-update">data last-update: {lastUpdate}</span>
       </div>
     );
   }

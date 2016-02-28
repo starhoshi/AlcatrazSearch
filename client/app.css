@@ -62,8 +62,7 @@ h1 {
   padding: 5px 10px
 }
 
-.order-by-nav .fa,
-.github-data .fa {
+.order-by-nav .fa {
   padding-right: 3px;
 }
 
@@ -119,9 +118,20 @@ h1 {
   padding: 15px 0 0 0;
 }
 
-.github-data {
+.github-data-container .github-data {
   float: left;
-  margin-right: 15px;
+  min-width: 90px;
+  margin: 15px 15px 0 0;
+}
+
+.github-data-container .github-data .fa {
+  width: 22px;
+  text-align: center;
+}
+
+.github-data-container .github-data span.data-item {
+  font-weight: 500;
+  padding-left: 22px;
 }
 
 .highlight {

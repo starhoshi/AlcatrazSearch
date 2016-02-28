@@ -13,8 +13,8 @@ interface GithubDataProps {
 class GithubData extends React.Component<GithubDataProps, void> {
   renderGithubData() {
     const { alcatraz } = this.props;
-    const created_at = Moment.utc(alcatraz.created_at).fromNow();
-    const updated_at = Moment.utc(alcatraz.updated_at).fromNow();
+    //const created_at = Moment.utc(alcatraz.created_at).fromNow();
+    //const updated_at = Moment.utc(alcatraz.updated_at).fromNow();
 
     return [STARS, WATCHES, FORKS, UPDATED, CREATED].map(orderBy => {
       const icon = ORDER_BY_ICONS[orderBy];
@@ -23,7 +23,8 @@ class GithubData extends React.Component<GithubDataProps, void> {
         <div className="github-data" key={orderBy}>
           <Icon name={icon}/>
           <span>{label}:&nbsp;</span>
-          <p>{alcatraz[orderBy]}</p>
+          <br/>
+          <span className="data-item">{alcatraz[orderBy]}</span>
         </div>
       );
     });

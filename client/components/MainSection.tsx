@@ -16,6 +16,7 @@ import {Alcatraz} from "../models/alcatraz";
 import RankNumber from "./RankNumber";
 import PanelTitle from "./PanelTitle";
 import GithubData from "./GithubData";
+import Screenshot from "./Screenshot";
 
 const PACKAGE_TYPES = {
   [SHOW_PLUGINS]: PLUGINS,
@@ -49,6 +50,7 @@ class MainSection extends React.Component<MainSectionProps, void> {
     return [];
   };
 
+
   renderPanel = (index, key) => {
     const { searchQuery } = this.props;
     return (
@@ -67,7 +69,7 @@ class MainSection extends React.Component<MainSectionProps, void> {
           </div>
         </Col>
         <Col xs={12} md={4}>
-          <img src={this.sortedAlcatraz[index].screenshot}/>
+          <Screenshot alcatraz={this.sortedAlcatraz[index]}/>
         </Col>
       </Panel>
     )
