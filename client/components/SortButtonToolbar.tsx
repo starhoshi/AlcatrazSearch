@@ -2,25 +2,8 @@ import * as React from 'react';
 import * as classNames from 'classnames';
 import {Nav,NavItem} from 'react-bootstrap';
 import * as Icon from 'react-fa';
-import {STARS,UPDATED,CREATED,WATCHES,FORKS,NAME} from "../constants/OrderByTypes";
+import {STARS,UPDATED,CREATED,WATCHES,FORKS,NAME, ORDER_BY_ICONS, ORDER_BY_TITLES} from "../constants/OrderByTypes";
 import {OrderBy} from "../models/orderBy";
-
-const ORDER_BY_TITLES = {
-  [STARS]: 'Stars',
-  [UPDATED]: 'Updated',
-  [CREATED]: 'Created',
-  [WATCHES]: 'Watchers',
-  [FORKS]: 'Forks',
-  [NAME]: 'Name',
-};
-const ORDER_BY_ICONS = {
-  [STARS]: 'star',
-  [UPDATED]: 'clock-o',
-  [CREATED]: 'calendar',
-  [WATCHES]: 'eye',
-  [FORKS]: 'code-fork',
-  [NAME]: 'sort-alpha-asc',
-};
 
 interface SortButtonToolbarProps {
   lastUpdate: string;
