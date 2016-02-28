@@ -120,7 +120,7 @@ h1 {
 
 .github-data-container .github-data {
   float: left;
-  min-width: 90px;
+  min-width: 100px;
   margin: 15px 15px 0 0;
 }
 
@@ -131,7 +131,13 @@ h1 {
 
 .github-data-container .github-data span.data-item {
   font-weight: 500;
-  padding-left: 22px;
+  /*padding-left: 22px;*/
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .panel-screenshot {
+    margin-top: 15px;
+  }
 }
 
 .highlight {

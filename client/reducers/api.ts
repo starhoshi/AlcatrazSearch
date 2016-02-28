@@ -17,6 +17,18 @@ export default handleActions<any>({
     const createdAtUtc = action.payload.result.created_at;
     const result = action.payload.result;
     result.created_at = Moment.utc(createdAtUtc).fromNow();
+    result.plugins = initializeData(action.payload.result.plugins);
     return {loading: false, error: false, result: result};
   }
 }, initialState);
+
+const initializeData = (alcatraz:Alcatraz[]) => {
+  return alcatraz.map((al:Alcatraz) => {
+    al.created_at = al.created_at || "-1";
+    al.updated_at = al.updated_at || "-1";
+    al.stargazers_count = al.stargazers_count || -1;
+    al.subscribers_count = al.subscribers_count || -1;
+    al.forks_count = al.forks_count || -1;
+    return al;
+  });
+};

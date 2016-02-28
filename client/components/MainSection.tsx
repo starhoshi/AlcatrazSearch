@@ -68,7 +68,7 @@ class MainSection extends React.Component<MainSectionProps, void> {
             <GithubData alcatraz={this.sortedAlcatraz[index]}/>
           </div>
         </Col>
-        <Col xs={12} md={4}>
+        <Col className="panel-screenshot" xs={12} md={4}>
           <Screenshot alcatraz={this.sortedAlcatraz[index]}/>
         </Col>
       </Panel>

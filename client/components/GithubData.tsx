@@ -11,30 +11,32 @@ interface GithubDataProps {
 }
 
 class GithubData extends React.Component<GithubDataProps, void> {
-  renderGithubData() {
-    const { alcatraz } = this.props;
-    //const created_at = Moment.utc(alcatraz.created_at).fromNow();
-    //const updated_at = Moment.utc(alcatraz.updated_at).fromNow();
-
-    return [STARS, WATCHES, FORKS, UPDATED, CREATED].map(orderBy => {
-      const icon = ORDER_BY_ICONS[orderBy];
-      const label = ORDER_BY_TITLES[orderBy];
-      return (
-        <div className="github-data" key={orderBy}>
-          <Icon name={icon}/>
-          <span>{label}:&nbsp;</span>
-          <br/>
-          <span className="data-item">{alcatraz[orderBy]}</span>
-        </div>
-      );
-    });
+  static renderGithubData(orderByType, data) {
+    const icon = ORDER_BY_ICONS[orderByType];
+    const label = ORDER_BY_TITLES[orderByType];
+    const displayData = data === "-1" || data === -1 ? "No Data" : data;
+    return (
+      <div className="github-data" key={orderByType}>
+        <Icon name={icon}/>
+        <span>{label}</span>
+        <br/>
+        <span className="data-item">{displayData}</span>
+      </div>
+    );
   }
 
 
   render() {
+    const { alcatraz } = this.props;
+    const created_at = Moment.utc(alcatraz.created_at).fromNow();
+    const updated_at = Moment.utc(alcatraz.updated_at).fromNow();
     return (
       <div className="github-data-container">
-        {this.renderGithubData()}
+        {GithubData.renderGithubData(STARS, alcatraz[STARS])}
+        {GithubData.renderGithubData(WATCHES, alcatraz[WATCHES])}
+        {GithubData.renderGithubData(FORKS, alcatraz[FORKS])}
+        {GithubData.renderGithubData(UPDATED, updated_at)}
+        {GithubData.renderGithubData(CREATED, created_at)}
       </div>
     );
   }

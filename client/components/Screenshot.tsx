@@ -13,7 +13,7 @@ class Screenshot extends React.Component<ScreenshotProps, void> {
       <div>
         {alcatraz.screenshot ? <img src={alcatraz.screenshot}
                                     alt={alcatraz.name + "screenshot"}/>
-          : <span>No Image.</span> }
+          : <span>No Screenshot Image.</span> }
       </div>
     );
   };
