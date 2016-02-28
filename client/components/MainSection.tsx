@@ -14,12 +14,14 @@ import * as Spinner from 'react-spinkit';
 import * as ReactList from 'react-list';
 import {Alcatraz} from "../models/alcatraz";
 import RankNumber from "./RankNumber";
+import PanelTitle from "./PanelTitle";
 
 const PACKAGE_TYPES = {
   [SHOW_PLUGINS]: PLUGINS,
   [SHOW_TEMPLATES]: TEMPLATES,
   [SHOW_THEMES]: THEMES
 };
+
 
 interface MainSectionProps {
   api: Api;
@@ -34,19 +36,6 @@ class MainSection extends React.Component<MainSectionProps, void> {
   matchedQueryPartially = (alcatraz:Alcatraz, queryText:string):boolean => {
     return _.lowerCase(alcatraz.name).indexOf(queryText) !== -1
       || _.lowerCase(alcatraz.description).indexOf(queryText) !== -1;
-  };
-
-  renderPanelHeader = (alcatraz:Alcatraz) => {
-    const { searchQuery } = this.props;
-    return (
-      <h2>
-        <a href={alcatraz.url}>
-          <Highlighter search={searchQuery.text}>
-            {alcatraz.name}
-          </Highlighter>
-        </a>
-      </h2>
-    );
   };
 
   filterSortResult = ():Alcatraz[] => {
@@ -64,8 +53,11 @@ class MainSection extends React.Component<MainSectionProps, void> {
     const { searchQuery } = this.props;
     return (
       <Panel key={key}>
-        <RankNumber rank={index}/>
-        {this.renderPanelHeader(this.sortedAlcatraz[index])}
+        <div className="package-title">
+          <RankNumber rank={index}/>
+          <PanelTitle searchQuery={searchQuery}
+                      alcatraz={this.sortedAlcatraz[index]}/>
+        </div>
         <Highlighter search={searchQuery.text}>
           {this.sortedAlcatraz[index].description}
         </Highlighter>

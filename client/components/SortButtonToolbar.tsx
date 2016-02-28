@@ -50,7 +50,7 @@ class SortButtonToolbar extends React.Component<SortButtonToolbarProps, void> {
     const { lastUpdate } = this.props;
     return (
       <div className="order-by-nav">
-        <label className="last-update">api-last-update: {lastUpdate}</label>
+        <label className="last-update">data last-update: {lastUpdate}</label>
         <label className="order-by">ORDER BY:</label>
         <Nav bsStyle="pills">
           {this.renderOrderByNavItems()}

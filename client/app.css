@@ -1,7 +1,6 @@
 body {
   color: #4A4A4A;
   font-family: Avenir Next, Helvetica, sans-serif;
-  /*font-size: 1em;*/
 }
 
 .jumbotron {
@@ -67,6 +66,25 @@ h1 {
 
 .main-section {
   clear: both;
+}
+
+.main-section .rank-number {
+  border: 2px solid #337ab7;
+  border-radius: 2px;
+  height: 50px;
+  min-width: 50px;
+  display: inline-block;
+  text-align: center;
+}
+
+.main-section .rank-number span {
+  color: #337ab7;
+  font-size: 34px;
+  font-weight: bold;
+  line-height: 46px;
+  height: 46px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .panel .panel-heading {
