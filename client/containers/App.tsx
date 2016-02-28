@@ -36,12 +36,14 @@ class App extends React.Component<AppProps, void> {
 
   render() {
     const { api, categoryFilter, orderBy, searchQuery } = this.props;
+    const createdAtResult = api.result ? api.result.created_at : null;
 
     return (
       <div className="alcatrazapp">
         <Header/>
         <div className="container">
           <SortButtonToolbar
+            lastUpdate={createdAtResult}
             orderBy={orderBy}
             onClick={this.handleClick.bind(this)}/>
           <MainSection

@@ -81,7 +81,7 @@ class MainSection extends React.Component<MainSectionProps, void> {
     this.sortedAlcatraz = this.filterSortResult();
 
     return (
-      <section>
+      <section className="main-section">
         {api.loading ? <Spinner spinnerName='wave'/> : null}
         <ReactList
           length={this.sortedAlcatraz.length}

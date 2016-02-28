@@ -23,6 +23,7 @@ const ORDER_BY_ICONS = {
 };
 
 interface SortButtonToolbarProps {
+  lastUpdate: string;
   orderBy: OrderBy;
   onClick: Function;
 }
@@ -46,9 +47,11 @@ class SortButtonToolbar extends React.Component<SortButtonToolbarProps, void> {
   }
 
   render() {
+    const { lastUpdate } = this.props;
     return (
       <div className="order-by-nav">
-        <label>ORDER BY:</label>
+        <label className="last-update">api-last-update: {lastUpdate}</label>
+        <label className="order-by">ORDER BY:</label>
         <Nav bsStyle="pills">
           {this.renderOrderByNavItems()}
         </Nav>

@@ -38,11 +38,18 @@ h1 {
 }
 
 .order-by-nav label {
-  float: left;
   height: 30px;
   line-height: 30px;
   margin: 0;
   display: block;
+}
+
+.order-by-nav label.order-by {
+  float: left;
+}
+
+.order-by-nav label.last-update {
+  float: right;
 }
 
 .order-by-nav .nav {
@@ -56,6 +63,10 @@ h1 {
 
 .order-by-nav .fa {
   padding-right: 3px;
+}
+
+.main-section {
+  clear: both;
 }
 
 .panel .panel-heading {
