@@ -32,6 +32,24 @@ h1 {
   outline: none;
 }
 
+.order-by-nav {
+  min-height: 30px;
+  margin-bottom: 15px;
+}
+
+.order-by-nav label {
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  margin: 0;
+  display: block;
+}
+
+.order-by-nav .nav {
+  float: left;
+  margin-left: 10px;
+}
+
 .order-by-nav .nav > li > a {
   padding: 5px 10px
 }
