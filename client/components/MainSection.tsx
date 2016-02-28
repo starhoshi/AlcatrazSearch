@@ -13,7 +13,7 @@ import * as Highlighter from "react-highlighter";
 import * as Spinner from 'react-spinkit';
 import * as ReactList from 'react-list';
 import {Alcatraz} from "../models/alcatraz";
-
+import RankNumber from "./RankNumber";
 
 const PACKAGE_TYPES = {
   [SHOW_PLUGINS]: PLUGINS,
@@ -64,7 +64,7 @@ class MainSection extends React.Component<MainSectionProps, void> {
     const { searchQuery } = this.props;
     return (
       <Panel key={key}>
-        <p>{index + 1}</p>
+        <RankNumber rank={index}/>
         {this.renderPanelHeader(this.sortedAlcatraz[index])}
         <Highlighter search={searchQuery.text}>
           {this.sortedAlcatraz[index].description}
@@ -81,14 +81,14 @@ class MainSection extends React.Component<MainSectionProps, void> {
     this.sortedAlcatraz = this.filterSortResult();
 
     return (
-      <div>
+      <section>
         {api.loading ? <Spinner spinnerName='wave'/> : null}
         <ReactList
           length={this.sortedAlcatraz.length}
           itemRenderer={this.renderPanel}
           updateWhenThisValueChanges={categoryFilter.name + orderBy.name + searchQuery.text}
         />
-      </div>
+      </section>
     );
   }
 }

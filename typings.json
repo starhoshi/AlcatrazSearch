@@ -12,6 +12,7 @@
     "react-bootstrap": "github:DefinitelyTyped/DefinitelyTyped/react-bootstrap/react-bootstrap.d.ts#3f0168b531ebb9248db49550856713fedc81c714",
     "react-dom": "github:DefinitelyTyped/DefinitelyTyped/react/react-dom.d.ts#bcd5761826eb567876c197ccc6a87c4d05731054",
     "react-fa": "github:DefinitelyTyped/DefinitelyTyped/react-fa/react-fa.d.ts#f318fbd33149ef0921b84657996ad31dab1e3241",
+    "react-github-corner": "github:starhoshi/typings-react-github-corner",
     "react-highlighter": "github:starhoshi/typings-react-highlighter",
     "react-list": "github:starhoshi/typings-react-list",
     "react-redux": "github:DefinitelyTyped/DefinitelyTyped/react-redux/react-redux.d.ts#ba257a9b91bc0de1bdd9091b6723194c905a902a",

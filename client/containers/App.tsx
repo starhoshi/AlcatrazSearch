@@ -11,6 +11,7 @@ import {Api} from '../models/api';
 import {OrderBy} from "../models/orderBy";
 import {CategoryFilter} from "../models/categoryFilter";
 import {SearchQuery} from "../models/searchQuery";
+import GithubCorner from 'react-github-corner';
 
 interface AppProps {
   api?: Api;
@@ -50,6 +51,10 @@ class App extends React.Component<AppProps, void> {
             categoryFilter={categoryFilter}/>
           <PageFooter/>
         </div>
+        <GithubCorner
+          href="https://github.com/starhoshi/AlcatrazSearch"
+          octoColor="#DEDEDE"
+        />
       </div>
     );
   }
