@@ -1,6 +1,7 @@
 body {
   color: #4A4A4A;
   font-family: Avenir Next, Helvetica, sans-serif;
+  font-size: 16px;
 }
 
 .jumbotron {
@@ -66,10 +67,22 @@ h1 {
 
 .main-section {
   clear: both;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-.main-section .rank-number {
-  border: 2px solid #337ab7;
+.main-section .panel-main {
+  float: left;
+}
+
+.main-section .panel-header {
+  float: left;
+}
+
+.main-section .panel-header .rank-number {
+  float: left;
+  /*border: 2px solid #337ab7;*/
+  background-color: #337ab7;
   border-radius: 2px;
   height: 50px;
   min-width: 50px;
@@ -77,19 +90,34 @@ h1 {
   text-align: center;
 }
 
-.main-section .rank-number span {
-  color: #337ab7;
+.main-section .panel-header .rank-number span {
+  color: #ffffff;
   font-size: 34px;
   font-weight: bold;
-  line-height: 46px;
-  height: 46px;
+  line-height: 50px;
+  height: 50px;
   margin-left: 5px;
   margin-right: 5px;
 }
 
-.panel .panel-heading {
-  color: #337ab7;
-  text-decoration: none;
+.main-section .panel-header h2 {
+  word-break: break-all;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 50px;
+  padding: 0 0 0 60px;
+  margin: 0;
+  height: auto;
+}
+
+.main-section img {
+  width: 100%;
+  height: auto;
+}
+
+.main-section .panel-content {
+  clear: both;
+  padding: 15px 0 0 0;
 }
 
 .highlight {

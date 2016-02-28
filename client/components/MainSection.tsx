@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
-import {Panel} from 'react-bootstrap';
+import {Panel, Col} from 'react-bootstrap';
 import {Api} from "../models/api";
 import {STARS} from "../constants/OrderByTypes";
 import {CategoryFilter} from "../models/categoryFilter";
@@ -53,17 +53,22 @@ class MainSection extends React.Component<MainSectionProps, void> {
     const { searchQuery } = this.props;
     return (
       <Panel key={key}>
-        <div className="package-title">
-          <RankNumber rank={index}/>
-          <PanelTitle searchQuery={searchQuery}
-                      alcatraz={this.sortedAlcatraz[index]}/>
-        </div>
-        <Highlighter search={searchQuery.text}>
-          {this.sortedAlcatraz[index].description}
-        </Highlighter>
-        <p>{this.sortedAlcatraz[index].stargazers_count}</p>
-        <a href={this.sortedAlcatraz[index].url}>{this.sortedAlcatraz[index].name}</a>
-        <img src={this.sortedAlcatraz[index].screenshot}/>
+        <Col xs={12} md={8}>
+          <div className="panel-header">
+            <RankNumber rank={index}/>
+            <PanelTitle searchQuery={searchQuery}
+                        alcatraz={this.sortedAlcatraz[index]}/>
+          </div>
+          <div className="panel-content">
+            <Highlighter search={searchQuery.text}>
+              {this.sortedAlcatraz[index].description}
+            </Highlighter>
+            <p>{this.sortedAlcatraz[index].stargazers_count}</p>
+          </div>
+        </Col>
+        <Col xs={12} md={4}>
+          <img src={this.sortedAlcatraz[index].screenshot}/>
+        </Col>
       </Panel>
     )
   };
