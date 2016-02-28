@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import Header from './Header';
 import SortButtonToolbar from '../components/SortButtonToolbar';
-import MainResult from '../components/MainResult';
+import MainSection from '../components/MainSection';
 import PageFooter from '../components/PageFooter';
 import * as OrderByActions from '../actions/orderBy';
 import {Api} from '../models/api';
@@ -43,7 +43,7 @@ class App extends React.Component<AppProps, void> {
           <SortButtonToolbar
             orderBy={orderBy}
             onClick={this.handleClick.bind(this)}/>
-          <MainResult
+          <MainSection
             api={api}
             orderBy={orderBy}
             searchQuery={searchQuery}

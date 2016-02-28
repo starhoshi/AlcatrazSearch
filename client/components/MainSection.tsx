@@ -21,14 +21,14 @@ const PACKAGE_TYPES = {
   [SHOW_THEMES]: THEMES
 };
 
-interface MainResultProps {
+interface MainSectionProps {
   api: Api;
   categoryFilter: CategoryFilter;
   orderBy: OrderBy;
   searchQuery: SearchQuery;
 }
 
-class MainResult extends React.Component<MainResultProps, void> {
+class MainSection extends React.Component<MainSectionProps, void> {
   sortedAlcatraz:Alcatraz[];
 
   matchedQueryPartially = (alcatraz:Alcatraz, queryText:string):boolean => {
@@ -93,4 +93,4 @@ class MainResult extends React.Component<MainResultProps, void> {
   }
 }
 
-export default MainResult;
+export default MainSection;
