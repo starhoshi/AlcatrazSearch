@@ -18,17 +18,19 @@ export default handleActions<any>({
     const result = action.payload.result;
     result.created_at = Moment.utc(createdAtUtc).fromNow();
     result.plugins = initializeData(action.payload.result.plugins);
+    result.color_schemes = initializeData(action.payload.result.color_schemes);
+    result.file_templates = initializeData(action.payload.result.file_templates);
     return {loading: false, error: false, result: result};
   }
 }, initialState);
 
 const initializeData = (alcatraz:Alcatraz[]) => {
   return alcatraz.map((al:Alcatraz) => {
-    al.created_at = al.created_at || "-1";
-    al.updated_at = al.updated_at || "-1";
-    al.stargazers_count = al.stargazers_count || -1;
-    al.subscribers_count = al.subscribers_count || -1;
-    al.forks_count = al.forks_count || -1;
+    al.created_at = al.created_at === null ? "-1" : al.created_at;
+    al.updated_at = al.updated_at === null ? "-1" : al.updated_at;
+    al.stargazers_count = al.stargazers_count === null ? -1 : al.stargazers_count;
+    al.subscribers_count = al.subscribers_count === null ? -1 : al.subscribers_count;
+    al.forks_count = al.forks_count === null ? -1 : al.forks_count;
     return al;
   });
 };

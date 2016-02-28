@@ -17,6 +17,7 @@ import RankNumber from "./RankNumber";
 import PanelTitle from "./PanelTitle";
 import GithubData from "./GithubData";
 import Screenshot from "./Screenshot";
+import {ORDER_BY_ORDERS} from "../constants/OrderByTypes";
 
 const PACKAGE_TYPES = {
   [SHOW_PLUGINS]: PLUGINS,
@@ -45,7 +46,7 @@ class MainSection extends React.Component<MainSectionProps, void> {
       const filteredAlcatraz:Array<Alcatraz> = api.result[PACKAGE_TYPES[categoryFilter.name]];
       const queryFilteredAlcatraz:Array<Alcatraz> = filteredAlcatraz.filter(
         alcatraz => this.matchedQueryPartially(alcatraz, _.lowerCase(searchQuery.text)));
-      return _.orderBy(queryFilteredAlcatraz, orderBy.name, ['desc']);
+      return _.orderBy(queryFilteredAlcatraz, orderBy.name, ORDER_BY_ORDERS[orderBy.name]);
     }
     return [];
   };

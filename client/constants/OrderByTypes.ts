@@ -12,7 +12,7 @@ export const ORDER_BY_TITLES = {
   [CREATED]: 'Created',
   [WATCHES]: 'Watchers',
   [FORKS]: 'Forks',
-  [NAME]: 'Name',
+  [NAME]: 'Name'
 };
 export const ORDER_BY_ICONS = {
   [STARS]: 'star',
@@ -20,5 +20,13 @@ export const ORDER_BY_ICONS = {
   [CREATED]: 'calendar',
   [WATCHES]: 'eye',
   [FORKS]: 'code-fork',
-  [NAME]: 'sort-alpha-asc',
+  [NAME]: 'sort-alpha-asc'
+};
+export const ORDER_BY_ORDERS = {
+  [STARS]: ['desc'],
+  [UPDATED]: ['desc'],
+  [CREATED]: ['desc'],
+  [WATCHES]: ['desc'],
+  [FORKS]: ['desc'],
+  [NAME]: ['asc']
 };
