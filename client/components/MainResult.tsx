@@ -39,19 +39,21 @@ class MainResult extends React.Component<MainResultProps, void> {
   renderPanelHeader = (alcatraz:Alcatraz) => {
     const { searchQuery } = this.props;
     return (
-      <a href={alcatraz.url}>
-        <Highlighter search={searchQuery.text}>
-          {alcatraz.name}
-        </Highlighter>
-      </a>
+      <h2>
+        <a href={alcatraz.url}>
+          <Highlighter search={searchQuery.text}>
+            {alcatraz.name}
+          </Highlighter>
+        </a>
+      </h2>
     );
   };
 
   filterSortResult = ():Alcatraz[] => {
     const { api, categoryFilter, orderBy, searchQuery } = this.props;
     if (api.result) {
-      const filteredAlcatraz:Alcatraz[] = api.result[PACKAGE_TYPES[categoryFilter.name]];
-      const queryFilteredAlcatraz:Alcatraz[] = filteredAlcatraz.filter(
+      const filteredAlcatraz:Array<Alcatraz> = api.result[PACKAGE_TYPES[categoryFilter.name]];
+      const queryFilteredAlcatraz:Array<Alcatraz> = filteredAlcatraz.filter(
         alcatraz => this.matchedQueryPartially(alcatraz, _.lowerCase(searchQuery.text)));
       return _.orderBy(queryFilteredAlcatraz, orderBy.name, ['desc']);
     }
@@ -61,9 +63,9 @@ class MainResult extends React.Component<MainResultProps, void> {
   renderPanel = (index, key) => {
     const { searchQuery } = this.props;
     return (
-      <Panel key={key}
-             header={this.renderPanelHeader(this.sortedAlcatraz[index])}>
+      <Panel key={key}>
         <p>{index + 1}</p>
+        {this.renderPanelHeader(this.sortedAlcatraz[index])}
         <Highlighter search={searchQuery.text}>
           {this.sortedAlcatraz[index].description}
         </Highlighter>
