@@ -54,6 +54,7 @@ class App extends React.Component<AppProps, void> {
         <GithubCorner
           href="https://github.com/starhoshi/AlcatrazSearch"
           octoColor="#DEDEDE"
+          bannerColor="#4A4A4A"
         />
       </div>
     );
