@@ -47,8 +47,8 @@ class SortButtonToolbar extends React.Component<SortButtonToolbarProps, void> {
 
   render() {
     return (
-      <div>
-        <span>ORDER BY:</span>
+      <div className="order-by-nav">
+        <label>ORDER BY:</label>
         <Nav bsStyle="pills">
           {this.renderOrderByNavItems()}
         </Nav>

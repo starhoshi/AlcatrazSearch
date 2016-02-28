@@ -32,11 +32,11 @@ h1 {
   outline: none;
 }
 
-.nav > li > a {
+.order-by-nav .nav > li > a {
   padding: 5px 10px
 }
 
-.fa {
+.order-by-nav .fa {
   padding-right: 3px;
 }
 
