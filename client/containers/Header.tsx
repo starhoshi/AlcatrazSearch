@@ -44,10 +44,15 @@ class Header extends React.Component<HeaderProps, void> {
       <Jumbotron>
         <div className="container">
           <h1>Alcatraz Search</h1>
+          <p>
+            Search&nbsp;
+            <a href="http://alcatraz.io/">Alcatraz</a>
+            &nbsp;more better.
+          </p>
           <SearchTextInput
             searchQuery={searchQuery}
             onChange={this.handleSearchQuery.bind(this)}
-            placeholder="Input Alcatraz Package Name."/>
+            placeholder="Search Alcatraz Packages"/>
           <SearchCategorySwitch
             filter={categoryFilter}
             onClick={this.handleClick.bind(this)}/>

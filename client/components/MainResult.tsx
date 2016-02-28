@@ -39,9 +39,11 @@ class MainResult extends React.Component<MainResultProps, void> {
   renderPanelHeader = (alcatraz:Alcatraz) => {
     const { searchQuery } = this.props;
     return (
-      <Highlighter search={searchQuery.text}>
-        {alcatraz.name}
-      </Highlighter>
+      <a href={alcatraz.url}>
+        <Highlighter search={searchQuery.text}>
+          {alcatraz.name}
+        </Highlighter>
+      </a>
     );
   };
 

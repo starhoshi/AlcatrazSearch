@@ -40,6 +40,11 @@ h1 {
   padding-right: 3px;
 }
 
+.panel .panel-heading {
+  color: #337ab7;
+  text-decoration: none;
+}
+
 .highlight {
   background-color: yellow;
 }
