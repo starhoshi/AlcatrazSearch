@@ -9,7 +9,7 @@ class RankNumber extends React.Component<RankNumberProps, void> {
     const {rank} = this.props;
     return (
       <div>
-        <span>{rank}</span>
+        <span>{rank + 1}</span>
       </div>
     );
   }
