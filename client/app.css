@@ -37,7 +37,8 @@ h1 {
   margin-bottom: 15px;
 }
 
-.order-by-nav label {
+.order-by-nav label.order-by,
+.order-by-nav span.last-update {
   height: 30px;
   line-height: 30px;
   margin: 0;
@@ -48,7 +49,7 @@ h1 {
   float: left;
 }
 
-.order-by-nav label.last-update {
+.order-by-nav span.last-update {
   float: right;
 }
 
@@ -81,11 +82,10 @@ h1 {
 
 .main-section .panel-header .rank-number {
   float: left;
-  /*border: 2px solid #337ab7;*/
   background-color: #337ab7;
-  border-radius: 2px;
+  border-radius: 4px;
   height: 50px;
-  min-width: 50px;
+  width: 75px;
   display: inline-block;
   text-align: center;
 }
@@ -96,8 +96,6 @@ h1 {
   font-weight: bold;
   line-height: 50px;
   height: 50px;
-  margin-left: 5px;
-  margin-right: 5px;
 }
 
 .main-section .panel-header h2 {
@@ -105,7 +103,7 @@ h1 {
   font-size: 40px;
   font-weight: 500;
   line-height: 50px;
-  padding: 0 0 0 60px;
+  padding: 0 0 0 85px;
   margin: 0;
   height: auto;
 }

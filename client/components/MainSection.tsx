@@ -15,13 +15,13 @@ import * as ReactList from 'react-list';
 import {Alcatraz} from "../models/alcatraz";
 import RankNumber from "./RankNumber";
 import PanelTitle from "./PanelTitle";
+import GithubData from "./GithubData";
 
 const PACKAGE_TYPES = {
   [SHOW_PLUGINS]: PLUGINS,
   [SHOW_TEMPLATES]: TEMPLATES,
   [SHOW_THEMES]: THEMES
 };
-
 
 interface MainSectionProps {
   api: Api;
@@ -63,7 +63,7 @@ class MainSection extends React.Component<MainSectionProps, void> {
             <Highlighter search={searchQuery.text}>
               {this.sortedAlcatraz[index].description}
             </Highlighter>
-            <p>{this.sortedAlcatraz[index].stargazers_count}</p>
+            <GithubData alcatraz={this.sortedAlcatraz[index]}/>
           </div>
         </Col>
         <Col xs={12} md={4}>

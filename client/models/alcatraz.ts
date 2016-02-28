@@ -6,7 +6,7 @@ export type Alcatraz = {
   open_issues_count?: number;
   stargazers_count?: number;
   forks_count?: number;
-  watchers_count?: number;
+  subscribers_count?: number;
   updated_at?: string;
   created_at?: string;
   pushed_at?: string;

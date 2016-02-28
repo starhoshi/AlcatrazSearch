@@ -16,7 +16,7 @@ export default handleActions<any>({
   [RECEIVE_ALCATRAZ]: (state:any, action:Action):Api => {
     const createdAtUtc = action.payload.result.created_at;
     const result = action.payload.result;
-    result.created_at = Moment(createdAtUtc).fromNow();
+    result.created_at = Moment.utc(createdAtUtc).fromNow();
     return {loading: false, error: false, result: result};
   }
 }, initialState);
