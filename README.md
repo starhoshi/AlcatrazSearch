@@ -1,6 +1,6 @@
 # AlcatrazSearch
 
-[screenshot.png (1228×933)](https://raw.githubusercontent.com/starhoshi/AlcatrazSearch/master/screenshot.png)
+![screenshot.png (1228×933)](https://raw.githubusercontent.com/starhoshi/AlcatrazSearch/master/screenshot.png)
 
 [![Build Status](https://travis-ci.org/starhoshi/AlcatrazSearch.svg?branch=master)](https://travis-ci.org/starhoshi/AlcatrazSearch)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
