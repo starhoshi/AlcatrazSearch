@@ -28,6 +28,10 @@ h1 {
   font-weight: bold;
 }
 
+.main-content {
+  margin-bottom: 30px;
+}
+
 .btn:focus, .btn.active:focus {
   outline: none;
 }

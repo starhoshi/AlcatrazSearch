@@ -41,7 +41,7 @@ class App extends React.Component<AppProps, void> {
     return (
       <div className="alcatrazapp">
         <Header/>
-        <div className="container">
+        <div className="container main-content">
           <SortButtonToolbar
             lastUpdate={createdAtResult}
             orderBy={orderBy}
