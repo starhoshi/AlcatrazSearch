@@ -51,8 +51,8 @@ class App extends React.Component<AppProps, void> {
             orderBy={orderBy}
             searchQuery={searchQuery}
             categoryFilter={categoryFilter}/>
-          <Footer/>
         </div>
+        <Footer/>
         <GithubCorner
           href="https://github.com/starhoshi/AlcatrazSearch"
           octoColor="#DEDEDE"

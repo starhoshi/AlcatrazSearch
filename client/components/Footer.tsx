@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as classNames from 'classnames';
 
 interface FooterProps {
 }
@@ -7,11 +8,28 @@ class Footer extends React.Component<FooterProps, void> {
   render() {
     return (
       <footer>
-        <iframe src="https://ghbtns.com/github-btn.html?user=starhoshi&repo=AlcatrazSearch&type=star&count=true"
-                frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
-        <iframe src="https://ghbtns.com/github-btn.html?user=starhoshi&repo=AlcatrazSearch&type=fork&count=true"
+        <div className="container">
+          <ul className="social-buttons">
+            <li>
+              <iframe className="github-btn"
+                      src="https://ghbtns.com/github-btn.html?user=starhoshi&repo=AlcatrazSearch&type=star&count=true"
+                      width={100}
+                      height={20}
+                      title="Star on GitHub"></iframe>
+            </li>
+            <li>
+              <iframe
+                src="https://platform.twitter.com/widgets/follow_button.html?screen_name=star__hoshi&show_screen_name=true"
+                width={230}
+                height={20}
+                allowTransparency={true}
                 frameBorder="0"
-                scrolling="0" width="170px" height="20px"></iframe>
+                scrolling="no">
+              </iframe>
+            </li>
+          </ul>
+          <p>Code licensed under MIT.</p>
+        </div>
       </footer>
     );
   }
