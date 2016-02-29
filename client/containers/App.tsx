@@ -5,7 +5,7 @@ import * as React from 'react';
 import Header from './Header';
 import SortButtonToolbar from '../components/SortButtonToolbar';
 import MainSection from '../components/MainSection';
-import PageFooter from '../components/PageFooter';
+import Footer from '../components/Footer';
 import * as OrderByActions from '../actions/orderBy';
 import {Api} from '../models/api';
 import {OrderBy} from "../models/orderBy";
@@ -51,7 +51,7 @@ class App extends React.Component<AppProps, void> {
             orderBy={orderBy}
             searchQuery={searchQuery}
             categoryFilter={categoryFilter}/>
-          <PageFooter/>
+          <Footer/>
         </div>
         <GithubCorner
           href="https://github.com/starhoshi/AlcatrazSearch"

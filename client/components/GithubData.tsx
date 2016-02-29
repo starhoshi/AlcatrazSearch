@@ -28,14 +28,14 @@ class GithubData extends React.Component<GithubDataProps, void> {
 
   render() {
     const { alcatraz } = this.props;
-    const created_at = Moment.utc(alcatraz.created_at).fromNow();
-    const updated_at = Moment.utc(alcatraz.updated_at).fromNow();
+    const created_at = alcatraz.created_at === "-1" ? "-1" : Moment.utc(alcatraz.created_at).fromNow();
+    const pushed_at = alcatraz.pushed_at === "-1" ? "-1" : Moment.utc(alcatraz.pushed_at).fromNow();
     return (
       <div className="github-data-container">
         {GithubData.renderGithubData(STARS, alcatraz[STARS])}
         {GithubData.renderGithubData(WATCHES, alcatraz[WATCHES])}
         {GithubData.renderGithubData(FORKS, alcatraz[FORKS])}
-        {GithubData.renderGithubData(UPDATED, updated_at)}
+        {GithubData.renderGithubData(UPDATED, pushed_at)}
         {GithubData.renderGithubData(CREATED, created_at)}
       </div>
     );

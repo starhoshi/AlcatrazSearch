@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-interface PageFooterProps {
+interface FooterProps {
 }
 
-class PageFooter extends React.Component<PageFooterProps, void> {
+class Footer extends React.Component<FooterProps, void> {
   render() {
     return (
       <footer>
@@ -17,4 +17,4 @@ class PageFooter extends React.Component<PageFooterProps, void> {
   }
 }
 
-export default PageFooter;
+export default Footer;
