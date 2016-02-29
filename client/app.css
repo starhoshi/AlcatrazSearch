@@ -134,7 +134,7 @@ h1 {
   /*padding-left: 22px;*/
 }
 
-@media (min-width: 768px) and (max-width: 992px) {
+@media (max-width: 991px) {
   .panel-screenshot {
     margin-top: 15px;
   }
