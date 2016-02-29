@@ -19,7 +19,7 @@ export default handleActions<any>({
     result.created_at = Moment.utc(createdAtUtc).fromNow();
     result.plugins = initializeData(action.payload.result.plugins);
     result.color_schemes = initializeData(action.payload.result.color_schemes);
-    result.file_templates = initializeData(action.payload.result.file_templates);
+    result.templates = initializeData(action.payload.result.templates);
     return {loading: false, error: false, result: result};
   }
 }, initialState);
