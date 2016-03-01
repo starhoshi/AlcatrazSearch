@@ -5,9 +5,7 @@
 ![screenshot.png (1228×933)](https://raw.githubusercontent.com/starhoshi/AlcatrazSearch/master/screenshot.png)
 
 [![Build Status](https://travis-ci.org/starhoshi/AlcatrazSearch.svg?branch=master)](https://travis-ci.org/starhoshi/AlcatrazSearch)
-
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/143f8ddbf1b043a59cf9b6ab5db55184)](https://www.codacy.com/app/kensuke1751/AlcatrazSearch)
-
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 
