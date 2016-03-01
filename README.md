@@ -1,8 +1,6 @@
 # AlcatrazSearch
 
-[starhoshi.github.io/AlcatrazSearch](http://starhoshi.github.io/AlcatrazSearch/)
-
-Search [Alcatraz](http://alcatraz.io/) more better.
+[starhoshi.github.io/AlcatrazSearch](http://starhoshi.github.io/AlcatrazSearch/) - Search [Alcatraz](http://alcatraz.io/) more better.
 
 [![Build Status](https://travis-ci.org/starhoshi/AlcatrazSearch.svg?branch=master)](https://travis-ci.org/starhoshi/AlcatrazSearch)
 [![Dependency Status](https://gemnasium.com/starhoshi/AlcatrazSearch.svg)](https://gemnasium.com/starhoshi/AlcatrazSearch)
