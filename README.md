@@ -2,7 +2,7 @@
 
 [starhoshi.github.io/AlcatrazSearch](http://starhoshi.github.io/AlcatrazSearch/)
 
-![screenshot.png (1228×933)](https://raw.githubusercontent.com/starhoshi/AlcatrazSearch/master/screenshot.png)
+Search [Alcatraz](http://alcatraz.io/) more better.
 
 [![Build Status](https://travis-ci.org/starhoshi/AlcatrazSearch.svg?branch=master)](https://travis-ci.org/starhoshi/AlcatrazSearch)
 [![Dependency Status](https://gemnasium.com/starhoshi/AlcatrazSearch.svg)](https://gemnasium.com/starhoshi/AlcatrazSearch)
@@ -10,8 +10,7 @@
 [![Code Climate](https://codeclimate.com/github/starhoshi/AlcatrazSearch/badges/gpa.svg)](https://codeclimate.com/github/starhoshi/AlcatrazSearch)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
-
-Search [Alcatraz](http://alcatraz.io/) more better.
+![screenshot.png (1228×933)](https://raw.githubusercontent.com/starhoshi/AlcatrazSearch/master/screenshot.png)
 
 ## Getting Started
 
