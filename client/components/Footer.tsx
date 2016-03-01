@@ -28,6 +28,7 @@ class Footer extends React.Component<FooterProps, void> {
               </iframe>
             </li>
           </ul>
+          <img className="ga-beacon" src="https://ga-beacon.appspot.com/UA-44007234-10/AlcatrazSearch?pixel"/>
           <p>Code licensed under MIT.</p>
         </div>
       </footer>
