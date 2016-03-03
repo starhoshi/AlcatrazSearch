@@ -13,7 +13,7 @@ const requestAlcatraz = createAction<Api>(
 
 const receiveAlcatraz = createAction<Api>(
   types.RECEIVE_ALCATRAZ,
-  (result : AlcatrazPackages) => <Api>{loading: false, error: false, result: result}
+  (result:AlcatrazPackages) => <Api>{loading: false, error: false, result: result}
 );
 
 const receiveError = createAction<Api>(
@@ -21,9 +21,9 @@ const receiveError = createAction<Api>(
   (error) => <Api>{loading: false, error: true, result: null}
 );
 
-// TODO: redux-logger action name is undefined...
+// TODO: redux-logger's action name is undefined...
 const loadAlcatraz = () => {
-  return (dispatch : Redux.Dispatch) => {
+  return (dispatch:Redux.Dispatch) => {
     dispatch(requestAlcatraz());
     fetch("https://dl.dropboxusercontent.com/u/43623483/alcatraz.json")
       .then(response => response.json())
