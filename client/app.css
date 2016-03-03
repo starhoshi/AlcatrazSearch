@@ -70,6 +70,10 @@ h1 {
   padding-right: 3px;
 }
 
+.main-section .spinner {
+  margin: 0 auto 0 auto;
+}
+
 .main-section {
   clear: both;
   word-wrap: break-word;
