@@ -63,11 +63,16 @@ h1 {
 }
 
 .order-by-nav .nav > li > a {
-  padding: 5px 10px
+  padding: 5px 10px;
 }
 
 .order-by-nav .fa {
   padding-right: 3px;
+}
+
+.order-by-nav .nav-pills > li,
+.order-by-nav .nav-pills > li + li {
+  margin: 0 2px 0 0;
 }
 
 .main-section .spinner {
