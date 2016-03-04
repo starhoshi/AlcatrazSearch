@@ -13,7 +13,7 @@ interface SortButtonToolbarProps {
 
 class SortButtonToolbar extends React.Component<SortButtonToolbarProps, void> {
   renderOrderByNavItems() {
-    return [STARS, WATCHES, FORKS, UPDATED, CREATED, NAME].map(orderBy => {
+    return [STARS, UPDATED, CREATED, NAME].map(orderBy => {
       const { orderBy: selectedOrderBy, onClick } = this.props;
       const title = ORDER_BY_TITLES[orderBy];
       const icon = ORDER_BY_ICONS[orderBy];
@@ -37,7 +37,7 @@ class SortButtonToolbar extends React.Component<SortButtonToolbarProps, void> {
         <Nav bsStyle="pills">
           {this.renderOrderByNavItems()}
         </Nav>
-        <span className="last-update">data last-update: {lastUpdate}</span>
+        <span className="last-update">data last-updated: {lastUpdate}</span>
       </div>
     );
   }
