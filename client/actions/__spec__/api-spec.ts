@@ -1,8 +1,10 @@
 import chai = require('chai');
-
+import sinon = require('sinon');
 import * as ApiActions from '../api';
 import {Api} from "../../models/api";
 import {AlcatrazPackages} from "../../models/alcatrazPackages";
+import 'isomorphic-fetch';
+import 'es6-promise';
 
 describe('ApiActions', () => {
   it('call requestAlcatraz', () => {
@@ -14,10 +16,10 @@ describe('ApiActions', () => {
   });
 
   it('call receiveAlcatraz', () => {
-    const { payload: receiveAlcatraz} = ApiActions.receiveAlcatraz(result);
+    const { payload: receiveAlcatraz} = ApiActions.receiveAlcatraz(ApiTestResult);
 
     chai.expect(receiveAlcatraz).to.eql(
-      <Api>{loading: false, error: false, result: result}
+      <Api>{loading: false, error: false, result: ApiTestResult}
     );
   });
 
@@ -29,18 +31,22 @@ describe('ApiActions', () => {
     );
   });
 
-  it('call loadAlcatraz', () => {
-    //const { payload: receiveError} = ApiActions.loadAlcatraz();
-    //console.log(ApiActions.loadAlcatraz());
-
-    //chai.expect(receiveError).to.eql(
-    //  <Api>{loading: false, error: true, result: null}
-    //);
-  });
+  // TODO: Test fetch action.
+  //it('call loadAlcatraz', () => {
+  //  fetch.then = sinon.stub().returns(Promise.resolve(result));
+  //  const dispatch = sinon.spy();
+  //  const action = ApiActions.loadAlcatraz();
+  //  action(dispatch)
+  //    .then((response) => {
+  //      chai.expect(dispatch.called).to.eql(
+  //        true
+  //      )
+  //    });
+  //});
 
 });
 
-const result = <AlcatrazPackages>{
+export const ApiTestResult = <AlcatrazPackages>{
   "created_at": "2016-02-29 12:03:41 UTC",
   "plugins": [{
     "open_issues_count": 0,
