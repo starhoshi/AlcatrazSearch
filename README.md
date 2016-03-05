@@ -41,6 +41,13 @@ Output build/public:
 npm run build
 ```
 
+## deploy GitHub Pages
+
+Output build/public and deploy gh-pages:
+
+```
+npm run deploy
+```
 
 ### Testing
 
