@@ -25,7 +25,7 @@ const receiveError = createAction<Api>(
 const loadAlcatraz = () => {
   return (dispatch:Redux.Dispatch) => {
     dispatch(requestAlcatraz());
-    fetch("https://dl.dropboxusercontent.com/u/43623483/alcatraz.json")
+    fetch("https://raw.githubusercontent.com/starhoshi/AlcatrazSearch-packages/master/data/alcatraz.json")
       .then(response => response.json())
       .then(json => dispatch(receiveAlcatraz(json)))
       .catch(error => dispatch(receiveError(error)))
